@@ -3,14 +3,6 @@
 #[default]
 #depends = []
 
-#[default.files]
-#LICENSE = ""
-#"README.md" = ""
-#ThinkPad = ""
-#config = ""
-#vim = ""
-
-#[default.variables]
 [zathura.files]
 zathura = "~/.config/zathura"
 
@@ -31,3 +23,7 @@ cargo = "~/.cargo"
 
 [vim.files]
 vim = "~/.vim"
+
+[pueue.files]
+pueue = "~/.config/pueue"
+
