@@ -28,3 +28,6 @@ paru = "~/.config/paru"
 
 [cargo.files]
 cargo = "~/.cargo"
+
+[vim.files]
+vim = "~/.vim"

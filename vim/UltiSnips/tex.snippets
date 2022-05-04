@@ -65,10 +65,20 @@ endsnippet
 snippet fig "Figure environment" b
 \begin{figure}[${1:htpb}]
 	\centering
-	${2:\includegraphics[width=0.8\textwidth]{$3}}
+	${2:\includegraphics[width=\textwidth]{$3}}
 	\caption{${4:$3}}
 	\label{fig:${5:${3/\W+/-/g}}}
 \end{figure}
+endsnippet
+
+snippet sec "Section" i
+\section{${1:section}}
+$0
+endsnippet
+
+snippet sss "Subsection" i
+\subsection{${1:subsection}}
+$0
 endsnippet
 
 snippet enum "Enumerate" bA
@@ -81,6 +91,10 @@ snippet item "Itemize" bA
 \begin{itemize}
 	\item $0
 \end{itemize}
+endsnippet
+
+snippet \it "Item" i
+\item $0
 endsnippet
 
 snippet desc "Description" b
@@ -102,7 +116,11 @@ snippet tbf "Bold" i
 endsnippet
 
 snippet rf "Refer figure" i
-\ref{fig:${1:figname}}$0
+\figref{fig:${1:figname}}$0
+endsnippet
+
+snippet ref "Reference" i
+\ref{${1:name}}$0
 endsnippet
 
 snippet rt "Refer table" i
@@ -518,7 +536,7 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 

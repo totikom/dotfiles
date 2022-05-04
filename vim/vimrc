@@ -38,7 +38,6 @@ Plugin 'junegunn/vim-easy-align'
 "Plugin 'szymonmaszke/vimpyter' "Vundle"
 
 Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'lyokha/vim-xkbswitch'
 "Plugin 'lldb-tools/vim-lldb'
@@ -96,13 +95,13 @@ colorscheme desert
 "set iminsert=0
 "set imsearch=0
 "
-"let g:XkbSwitchEnabled = 1
-"let g:XkbSwitchLib = '/usr/local/lib/libg3kbswitch.so'
-"let g:XkbSwitchIMappings = ['ru']
-""let g:XkbSwitchSkipIMappings =
-        ""\ {'*' : ['.', '>', ':', ';', ',', '{<CR>', '`', '/*', '/*<CR>'],}
+let g:XkbSwitchEnabled = 1
+let g:XkbSwitchLib = '/usr/local/lib/libg3kbswitch.so'
+let g:XkbSwitchIMappings = ['ru']
 "let g:XkbSwitchSkipIMappings =
-			"\ {'*' : ['.', '>', ':', ';', ',', '{','}', '[',']','`',"'", '"', '/*', '/*<CR>'],}
+	""\ {'*' : ['.', '>', ':', ';', ',', '{<CR>', '`', '/*', '/*<CR>'],}
+let g:XkbSwitchSkipIMappings =
+			\ {'*' : ['.', '>', ':', ';', ',', '{','}', '[',']','`',"'", '"', '/*', '/*<CR>'],}
 
 "highlight lCursor guifg=NONE guibg=Cyan
 set spelllang=ru_yo,en_us
@@ -126,9 +125,9 @@ au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv7"
 
 
 "LaTeX-Suite
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
+ "OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+ "'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+ "The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 "let g:Tex_DefaultTargetFormat = 'pdf'
 "let g:Tex_MultipleCompileFormats = 'pdf'
@@ -155,20 +154,14 @@ if match($TERM, "screen")!=-1
 	set term=xterm
 endif
 
-let g:racer_cmd = "/home/eugene/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap <leader>gd <Plug>(rust-doc)
-
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-map ,l :w<CR>:Ctest --lib<CR>
 map ,, :w<CR>:Ctest<CR>
-map ,f :w<CR>:RustFmt<CR>
+map ,l :w<CR>:Ctest --lib<CR>
+map ,q :w<CR>:Ctest -q<CR>
+map ,f :RustFmt<CR>:w<CR>
+
