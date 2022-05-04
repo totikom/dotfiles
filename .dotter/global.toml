@@ -1,0 +1,27 @@
+[helpers]
+
+#[default]
+#depends = []
+
+#[default.files]
+#LICENSE = ""
+#"README.md" = ""
+#ThinkPad = ""
+#config = ""
+#vim = ""
+
+#[default.variables]
+[zathura.files]
+zathura = "~/.config/zathura"
+
+[zellij.files]
+zellij = "~/.config/zellij"
+
+[alacritty.files]
+alacritty = "~/.config/alacritty"
+
+[paru.files]
+paru = "~/.config/paru"
+
+[cargo.files]
+cargo = "~/.cargo"

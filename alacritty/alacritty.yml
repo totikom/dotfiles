@@ -1,3 +1,6 @@
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }
+
 # XTerm's default colors
 colors:
   # Default colors
@@ -25,6 +28,3 @@ colors:
     magenta: '0xff00ff'
     cyan:    '0x00ffff'
     white:   '0xffffff'
-
-key_bindings:
-  - { key: F11, action: ToggleFullscreen }

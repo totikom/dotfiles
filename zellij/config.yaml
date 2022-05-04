@@ -24,8 +24,8 @@ keybinds:
           key: [Ctrl: 'h',]
         - action: [SwitchToMode: Tmux,]
           key: [Ctrl: 'b',]
-        - action: [Quit,]
-          key: [Ctrl: 'q',]
+        #- action: [Quit,]
+          #key: [Ctrl: 'q',]
         - action: [NewPane: ]
           key: [ Alt: 'n',]
         - action: [MoveFocusOrTab: Left,]
@@ -519,7 +519,7 @@ plugins:
 # Options:
 #   - detach (Default)
 #   - quit
-#on_force_close: quit
+on_force_close: detach
 
 # Send a request for a simplified ui (without arrow fonts) to plugins
 # Options:
