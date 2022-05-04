@@ -23,5 +23,8 @@ alacritty = "~/.config/alacritty"
 [paru.files]
 paru = "~/.config/paru"
 
+[zsh.files]
+"zsh/zshrc" = "~/.zshrc"
+
 [cargo.files]
 cargo = "~/.cargo"
