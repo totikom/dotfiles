@@ -1,2 +1,3 @@
 # dotfiles
-My configuration files
+My configuration files, managed via [dotter](https://github.com/SuperCuber/dotter)
+
