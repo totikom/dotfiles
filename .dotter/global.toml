@@ -1,7 +1,15 @@
 [helpers]
 
-#[default]
-#depends = []
+[default]
+depends = [
+	"alacritty",
+	"cargo",
+	"paru",
+	"pueue",
+	"vim",
+	"zathura",
+	"zellij",
+]
 
 [zathura.files]
 zathura = "~/.config/zathura"
