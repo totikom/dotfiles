@@ -35,3 +35,12 @@ vim = "~/.vim"
 [pueue.files]
 pueue = "~/.config/pueue"
 
+[borg.files]
+"borg/backup.sh" = "~/backup.sh"
+"borg/exclusions" = "~/.borg/exclusions"
+
+[borg.variables]
+target = "Borg"
+mountpoint = "/mnt/Backup"
+backups = "/home/eugene /etc /mnt/Media/Pictures /mnt/Media/Books /mnt/Media/cloud_archive"
+

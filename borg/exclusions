@@ -1,0 +1,16 @@
+/etc/cups
+/etc/libvirt
+/home/eugene/.cache
+/home/eugene/.cargo/registry
+/home/eugene/.gradle
+/home/eugene/.local
+/home/eugene/.npm
+/home/eugene/.rustup/toolchains
+/home/eugene/Documents/Repo
+/home/eugene/.config/Slack
+/home/eugene/.config/ClickUp
+/home/eugene/.config/transmission-daemon/resume
+/home/eugene/.mozilla
+/home/eugene/.thunderbird
+/home/eugene/.config/Nextcloud/logs
+/home/eugene/.config/VK/Cache/
