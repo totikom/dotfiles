@@ -7,7 +7,7 @@ MOUNTPOINT={{mountpoint}}
 TARGET=$MOUNTPOINT/{{target}}
 
 #Passphrase
-export BORG_PASSCOMMAND="secret-tool lookup borg-repository /mnt/Backup/{{target}}"
+export BORG_PASSCOMMAND="secret-tool lookup borg-repository $TARGET"
 
 DATE=$(date)
 
