@@ -41,15 +41,24 @@ if [[ -z "$ZELLIJ_RUN" ]]; then
 fi
 
 PATH=$PATH:~/.cargo/bin
-PATH="/home/eugene/.local/share/solana/install/active_release/bin:$PATH"
+PATH="$PATH:/home/eugene/.local/share/solana/install/active_release/bin"
 
 export EDITOR='vim'
 export VISUAL='vim'
 
+{{#if (eq (command_output "hostname") "Main-pc\n")}}
+# Main-pc specific
+alias torrents='watch transmission-remote -t active -l -st'
+{{else}}
+# not Main-pc specific
+
 # Main-pc (un)mounting
 alias mount-pc='sshfs 192.168.1.68:/mnt/Media /mnt/Media/' 
 alias unmount-pc='umount /mnt/Media'
+{{/if}}
 export TERM=xterm-256color-italic
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+alias slm-build='cmake --build ../build-libslm-Desktop-Debug --target all'
