@@ -164,4 +164,6 @@ map ,, :w<CR>:Ctest<CR>
 map ,l :w<CR>:Ctest --lib<CR>
 map ,q :w<CR>:Ctest -q<CR>
 map ,f :RustFmt<CR>:w<CR>
+"Rust Embedded
+map ,e :w<CR>:Cargo embed<CR>
 

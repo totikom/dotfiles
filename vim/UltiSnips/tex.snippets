@@ -71,7 +71,7 @@ snippet item "Itemize" bA
 \end{itemize}
 endsnippet
 
-snippet \it "Item" i
+snippet it "Item" i
 \item $0
 endsnippet
 
@@ -95,6 +95,18 @@ endsnippet
 
 snippet ttt "Monospace" i
 \texttt{${1:monospace}}$0
+endsnippet
+
+snippet i "Italic" i
+\textit{${1:${VISUAL}}}$0
+endsnippet
+
+snippet b "Bold" i
+\textbf{${1:${VISUAL}}}$0
+endsnippet
+
+snippet t "Monospace" i
+\texttt{${1:${VISUAL}}}$0
 endsnippet
 
 snippet rf "Refer figure" i
