@@ -39,3 +39,9 @@ pueue = "~/.config/pueue"
 [borg.files]
 "borg/backup.sh" = "~/backup.sh"
 "borg/exclusions" = "~/.borg/exclusions"
+
+[ssh.files]
+ssh = {target = "/etc/ssh", type = "template", owner = "root"}
+
+[ssh.variables]
+string = "dotter"
