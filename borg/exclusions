@@ -1,6 +1,7 @@
 /etc/cups
 /etc/libvirt
 /home/eugene/.cache
+/home/eugene/.ccache
 /home/eugene/.cargo/registry
 /home/eugene/.config/ClickUp
 /home/eugene/.config/Nextcloud/logs
@@ -11,6 +12,9 @@
 /home/eugene/.local
 /home/eugene/.mozilla
 /home/eugene/.npm
+/home/eugene/.nvm
+/home/eugene/.yarn
+/home/eugene/.node-gyp
 /home/eugene/.rustup/toolchains
 /home/eugene/.thunderbird
 /home/eugene/Documents/Repo

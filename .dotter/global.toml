@@ -3,9 +3,12 @@
 [default]
 depends = [
 	"alacritty",
+	"borg",
 	"cargo",
+	"git",
 	"paru",
 	"pueue",
+	"ssh",
 	"vim",
 	"zathura",
 	"zellij",
@@ -45,3 +48,6 @@ ssh = {target = "/etc/ssh", type = "template", owner = "root"}
 
 [ssh.variables]
 string = "dotter"
+
+[git.files]
+"git/config" = "~/.gitconfig"

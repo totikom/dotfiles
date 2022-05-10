@@ -1,0 +1,14 @@
+[user]
+	name = Eugene Lomov
+	email = eugene.v.lomov@gmail.com
+	signingKey = 3197B6B3AE53574B
+[core]
+	editor = vim
+[credential]
+	helper = store
+[pull]
+	ff = only
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
