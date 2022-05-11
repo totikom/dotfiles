@@ -8,11 +8,15 @@ depends = [
 	"git",
 	"paru",
 	"pueue",
-	"ssh",
 	"vim",
 	"zathura",
 	"zellij",
 	"zsh",
+]
+
+[root]
+depends = [
+	"ssh",
 ]
 
 [zathura.files]
