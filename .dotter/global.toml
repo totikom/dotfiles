@@ -17,6 +17,7 @@ depends = [
 [root]
 depends = [
 	"ssh",
+	"pacman",
 ]
 
 [zathura.files]
@@ -50,8 +51,8 @@ pueue = "~/.config/pueue"
 [ssh.files]
 ssh = {target = "/etc/ssh", type = "template", owner = "root"}
 
-[ssh.variables]
-string = "dotter"
-
 [git.files]
 "git/config" = "~/.gitconfig"
+
+[pacman.files]
+"pacman/pacman.conf" = {target = "/etc/pacman.conf", type = "template", owner = "root"}
