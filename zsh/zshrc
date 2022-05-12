@@ -55,6 +55,10 @@ alias torrents='watch transmission-remote -t active -l -st'
 # Main-pc (un)mounting
 alias mount-pc='sshfs 192.168.1.68:/mnt/Media /mnt/Media/' 
 alias unmount-pc='umount /mnt/Media'
+
+# Repo syncing
+alias sync-from-main='rsync -apgtv --recursive --exclude ".git" --exclude "target" 192.168.1.68:~/Documents/Repo/solcery/on-chain/ ~/Documents/Repo/solcery/on-chain/'
+alias sync-to-main='rsync -apgtv --recursive --exclude ".git" --exclude "target" ~/Documents/Repo/solcery/on-chain/ 192.168.1.68:~/Documents/Repo/solcery/on-chain/'
 {{/if}}
 export TERM=xterm-256color-italic
 
