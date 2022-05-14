@@ -14,8 +14,6 @@ daemon:
   pause_all_on_failure: false
   callback: ~
   callback_log_lines: 10
-  groups:
-    default: 1
 shared:
   pueue_directory: /home/eugene/.local/share/pueue
   use_unix_socket: true
