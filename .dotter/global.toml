@@ -3,7 +3,6 @@
 [default]
 depends = [
 	"alacritty",
-	"borg",
 	"cargo",
 	"git",
 	"paru",
