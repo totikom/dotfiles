@@ -55,3 +55,6 @@ ssh = {target = "/etc/ssh", type = "template", owner = "root"}
 
 [pacman.files]
 "pacman/pacman.conf" = {target = "/etc/pacman.conf", type = "template", owner = "root"}
+
+[i3.files]
+i3 = "~/.config/i3"
