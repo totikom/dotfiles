@@ -1,2 +1,2 @@
 includes = [".dotter/laptop.toml"]
-packages = ["borg", "default", "root", "i3"]
+packages = ["borg", "default", "root", "i3", "Xorg"]

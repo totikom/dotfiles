@@ -2,3 +2,6 @@
 target = "ThinkPad_Borg"
 mountpoint = "192.168.1.68:/mnt/Backup"
 backups = "/home/eugene /etc"
+
+[Xorg.variables]
+dpi = 120

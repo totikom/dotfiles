@@ -58,3 +58,7 @@ ssh = {target = "/etc/ssh", type = "template", owner = "root"}
 
 [i3.files]
 i3 = "~/.config/i3"
+
+[Xorg.files]
+"Xorg/Xresources" = "~/.Xresources"
+"Xorg/input" = {target = "/usr/share/X11/xorg.conf.d/40-libinput.conf", type = "template", owner = "root"}
