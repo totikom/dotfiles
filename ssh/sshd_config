@@ -57,23 +57,6 @@ HostbasedAuthentication yes
 PasswordAuthentication no
 #PermitEmptyPasswords no
 
-{{#if (eq (command_output "hostname") "Main-pc\n")}}
-# Main-pc specific
-# Change to no to disable s/key passwords
-ChallengeResponseAuthentication yes
-AuthenticationMethods publickey,keyboard-interactive:pam
-
-Match User osmc
-        ChrootDirectory /mnt/Media
-        ForceCommand internal-sftp
-        AllowTcpForwarding no
-        X11Forwarding no
-	#PermitTTY no
-{{else}}
-# not Main-pc specific
-KbdInteractiveAuthentication no
-{{/if}}
-
 # Kerberos options
 #KerberosAuthentication no
 #KerberosOrLocalPasswd yes
@@ -121,6 +104,23 @@ PrintMotd no # pam does that
 
 # override default of no subsystems
 Subsystem sftp internal-sftp
+
+{{#if (eq (command_output "hostname") "Main-pc\n")}}
+# Main-pc specific
+# Change to no to disable s/key passwords
+ChallengeResponseAuthentication yes
+AuthenticationMethods publickey,keyboard-interactive:pam
+
+Match User osmc
+        ChrootDirectory /mnt/Media
+        ForceCommand internal-sftp
+        AllowTcpForwarding no
+        X11Forwarding no
+	#PermitTTY no
+{{else}}
+# not Main-pc specific
+KbdInteractiveAuthentication no
+{{/if}}
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
