@@ -62,3 +62,12 @@ i3 = "~/.config/i3"
 [Xorg.files]
 "Xorg/Xresources" = "~/.Xresources"
 "Xorg/input" = {target = "/usr/share/X11/xorg.conf.d/40-libinput.conf", type = "template", owner = "root"}
+
+[mpd]
+depends = ["mpdas"]
+
+[mpd.files]
+mpd = "~/.config/mpd"
+
+[mpdas.files]
+"mpdas/mpdasrc" = "~/.config/mpdasrc"

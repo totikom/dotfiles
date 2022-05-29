@@ -33,6 +33,8 @@ make
 maxima
 maxima-ecl
 mc
+mpd
+mpdas
 ncdu
 neofetch
 nerd-fonts-noto-sans-mono
@@ -53,6 +55,7 @@ rsync
 rustup
 s-tui
 screen
+secret-tool
 speedtest-cli
 sshfs
 starship
