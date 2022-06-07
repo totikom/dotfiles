@@ -39,6 +39,7 @@ openboard
 picard
 protonvpn-gui
 retroshare
+rofi
 signal-desktop
 simple-scan
 slack-desktop
