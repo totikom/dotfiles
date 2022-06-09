@@ -4,6 +4,7 @@
 depends = [
 	"alacritty",
 	"cargo",
+	"earbuds",
 	"git",
 	"paru",
 	"pueue",
@@ -78,3 +79,6 @@ transmission = "~/.config/transmission-daemon"
 
 [starship.files]
 "starship/starship.toml" = "~/.config/starship.toml"
+
+[earbuds.files]
+earbuds = "~/.config/livebuds"
