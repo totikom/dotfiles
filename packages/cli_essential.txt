@@ -33,6 +33,7 @@ make
 maxima
 maxima-ecl
 mc
+mpc
 mpd
 mpdas
 ncdu

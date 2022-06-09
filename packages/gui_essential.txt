@@ -12,6 +12,7 @@ comix
 darktable
 discord
 doublecmd-gtk2
+earbuds
 element-desktop
 epson-inkjet-printer-l805
 firefox
