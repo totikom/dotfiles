@@ -18,6 +18,7 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias maxima=rmaxima
 alias x='gio trash'
+alias torrents='watch transmission-remote -t active -l -st'
 umask 027
 
 #pueue

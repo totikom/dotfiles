@@ -46,7 +46,7 @@ vim = "~/.vim"
 pueue = "~/.config/pueue"
 
 [borg.files]
-"borg/backup.sh" = "~/backup.sh"
+"borg/backup.sh" = "~/.local/bin/backup.sh"
 "borg/exclusions" = "~/.borg/exclusions"
 
 [ssh.files]
