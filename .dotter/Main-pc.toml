@@ -1,2 +1,2 @@
-includes = [".dotter/pc.toml"]
 packages = ["borg", "default", "i3", "root", "mpd"]
+includes = [".dotter/pc.toml", ".dotter/private/private_vars.toml"]

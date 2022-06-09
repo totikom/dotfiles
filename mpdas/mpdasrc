@@ -1,4 +1,4 @@
-username = "{{command_output "secret-tool lookup last-fm username"}}"
-password = "{{command_output "secret-tool lookup last-fm password"}}"
+username = "{{username}}"
+password = "{{pass}}"
 runas = mpd
 debug = 1
