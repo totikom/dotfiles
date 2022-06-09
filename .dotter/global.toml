@@ -73,5 +73,8 @@ mpd = "~/.config/mpd"
 [mpdas.files]
 "mpdas/mpdasrc" = "~/.config/mpdasrc"
 
+[transmission.files]
+transmission = "~/.config/transmission-daemon"
+
 [starship.files]
 "starship/starship.toml" = "~/.config/starship.toml"
