@@ -1,5 +1,4 @@
 alacritty
-anki
 arduino
 betterlockscreen
 boomaga-qt5
@@ -11,6 +10,7 @@ clementine
 code
 comix
 darktable
+dex
 discord
 doublecmd-gtk2
 earbuds
@@ -39,7 +39,7 @@ mullvad-vpn
 nextcloud-client
 openboard
 picard
-polybar
+i3status-rs
 protonvpn-gui
 retroshare
 rofi

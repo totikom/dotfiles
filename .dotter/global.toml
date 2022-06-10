@@ -59,7 +59,7 @@ ssh = {target = "/etc/ssh", type = "template", owner = "root"}
 "pacman/pacman.conf" = {target = "/etc/pacman.conf", type = "template", owner = "root"}
 
 [i3]
-depends = ["betterlockscreen", "polybar"]
+depends = ["betterlockscreen", "i3status-rs"]
 
 [i3.files]
 i3 = "~/.config/i3"
@@ -89,5 +89,5 @@ earbuds = "~/.config/livebuds"
 [betterlockscreen.files]
 betterlockscreen = "~/.config"
 
-[polybar.files]
-polybar = "~/.config/polybar"
+[i3status-rs.files]
+i3status-rs = "~/.config/i3status-rust"

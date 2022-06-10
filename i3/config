@@ -30,7 +30,8 @@ exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:caps_toggle'"
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id betterlockscreen -u ~/manjaro_triangles_wallpaper_1920x1200px.jpg
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -168,6 +169,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #-B "Suspend" "systemctl suspend && pkill i3-nagbar" \
 #-B "Reboot" "systemctl reboot" \
 #-B "Power off" "systemctl poweroff" \
+bindsym $mod+shift+x exec betterlockscreen -l dim --off 30
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -199,6 +201,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command i3status
+	font pango:monospace 12
+	status_command i3status-rs
 	position top
 }
