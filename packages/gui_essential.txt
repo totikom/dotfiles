@@ -5,8 +5,6 @@ boomaga-qt5
 brother-dcpl2520dw
 brscan-skey
 brscan4
-calibre
-clementine
 code
 comix
 darktable
@@ -38,8 +36,7 @@ mpv
 mullvad-vpn
 nextcloud-client
 openboard
-picard
-i3status-rs
+i3status-rust
 protonvpn-gui
 retroshare
 rofi

@@ -17,7 +17,6 @@ gcc
 gdb
 git
 git-lfs
-github-cli
 gitui
 gnupg
 gnuplot
@@ -56,7 +55,6 @@ rsync
 rustup
 s-tui
 screen
-secret-tool
 speedtest-cli
 sshfs
 starship
@@ -69,7 +67,6 @@ valgrind
 vim
 vim-spell-en
 vim-spell-ru
-vnstat
 wine
 wireguard-dkms
 xclip
