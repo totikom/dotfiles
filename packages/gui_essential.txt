@@ -1,6 +1,7 @@
 alacritty
 anki
 arduino
+betterlockscreen
 boomaga-qt5
 brother-dcpl2520dw
 brscan-skey
@@ -38,6 +39,7 @@ mullvad-vpn
 nextcloud-client
 openboard
 picard
+polybar
 protonvpn-gui
 retroshare
 rofi
@@ -57,6 +59,7 @@ veracrypt
 vk-messenger
 vlc
 wxmaxima
+xidlehook
 xournalpp
 yubikey-manager-qt
 yubikey-personalization-gui
