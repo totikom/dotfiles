@@ -22,8 +22,8 @@ font pango:monospace 12
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:caps_toggle'"
-#exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:shift_caps_switch' -option 'grp_led:caps'"
+#exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:caps_toggle'"
+exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:shift_caps_switch' -option 'grp_led:caps'"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -42,7 +42,10 @@ set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym $mod+b exec --no-startup-id exec ~/.config/i3connect_buds.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -201,7 +204,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	font pango:monospace 12
+	font pango:monospace 10
 	status_command i3status-rs
 	position top
 }

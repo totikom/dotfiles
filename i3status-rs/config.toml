@@ -15,20 +15,34 @@ alert = 10.0
 block = "memory"
 display_type = "memory"
 format_mem = "{mem_used_percents}"
+icons = true
+interval = 5
+warning_mem = 80
+critical_mem = 95
+
+[[block]]
+block = "memory"
+display_type = "swap"
 format_swap = "{swap_used_percents}"
+icons = true
+interval = 5
+warning_swap = 80
+critical_swap = 95
 
 [[block]]
 block = "cpu"
 interval = 1
 
 [[block]]
-block = "load"
-interval = 1
-format = "{1m}"
-
-[[block]]
 block = "sound"
 
+{{#if (eq (command_output "hostname") "ThinkPad\n")}}
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage:6#100} {percentage} {time}"
+
+{{/if}}
 [[block]]
 block = "time"
 interval = 5
