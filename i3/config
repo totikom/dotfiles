@@ -30,8 +30,9 @@ exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:shift_caps_switch' -o
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock  -- betterlockscreen -l dim --off 30
 exec --no-startup-id betterlockscreen -u ~/manjaro_triangles_wallpaper_1920x1200px.jpg
+exec --no-startup-id ~/.config/i3/lock_screen.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -45,7 +46,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym $mod+b exec --no-startup-id exec ~/.config/i3connect_buds.sh
+bindsym $mod+b exec --no-startup-id ~/.config/i3/connect_buds.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

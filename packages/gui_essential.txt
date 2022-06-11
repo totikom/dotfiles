@@ -21,6 +21,7 @@ gimp
 gitkraken
 gparted
 homebank
+i3status-rust
 inkscape
 ivpn-ui
 joplin-desktop
@@ -36,7 +37,6 @@ mpv
 mullvad-vpn
 nextcloud-client
 openboard
-i3status-rust
 protonvpn-gui
 retroshare
 rofi
@@ -58,6 +58,7 @@ vlc
 wxmaxima
 xidlehook
 xournalpp
+xss-lock
 yubikey-manager-qt
 yubikey-personalization-gui
 yubioath-desktop
