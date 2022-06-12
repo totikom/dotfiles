@@ -67,7 +67,7 @@ i3 = "~/.config/i3"
 [Xorg.files]
 "Xorg/Xresources" = "~/.Xresources"
 "Xorg/input" = {target = "/usr/share/X11/xorg.conf.d/40-libinput.conf", type = "template", owner = "root"}
-"Xorg/monitor" = {target = "/etc/X11/xorg.conf.d/40-monitor.conf", type = "template", owner = "root"}
+"Xorg/monitor" = {target = "/etc/X11/xorg.conf.d/40-monitor.conf", type = "template", owner = "root", if = '(eq (command_output "hostname") "Main-pc\n")'}
 
 [mpd]
 depends = ["mpdas"]
