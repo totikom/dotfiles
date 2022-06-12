@@ -2,3 +2,6 @@
 target = "Borg"
 mountpoint = "/mnt/Backup"
 backups = "/home/eugene /etc /mnt/Media/Pictures /mnt/Media/Books /mnt/Media/cloud_archive"
+
+[Xorg.variables]
+display = "DVI-0"

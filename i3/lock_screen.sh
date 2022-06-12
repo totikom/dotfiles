@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Only exported variables can be used within the timer's command.
-export PRIMARY_DISPLAY="DVI-0"
+export PRIMARY_DISPLAY={{display}}
 
 xidlehook \
 	`# Don't lock when there's a fullscreen application` \
