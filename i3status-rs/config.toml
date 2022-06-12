@@ -1,5 +1,5 @@
 theme = "solarized-dark"
-icons = "awesome"
+icons = "awesome6"
 
 [[block]]
 block = "disk_space"
@@ -32,6 +32,13 @@ critical_swap = 95
 [[block]]
 block = "cpu"
 interval = 1
+
+[[block]]
+block = "custom"
+command = "~/.config/i3status-rust/buds.sh"
+json = true
+interval = 5
+hide_when_empty = true
 
 [[block]]
 block = "sound"
