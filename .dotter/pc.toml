@@ -5,3 +5,5 @@ backups = "/home/eugene /etc /mnt/Media/Pictures /mnt/Media/Books /mnt/Media/clo
 
 [Xorg.variables]
 display = "DVI-0"
+dpi = 96
+resolution = "1920x1080"

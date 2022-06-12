@@ -6,3 +6,4 @@ backups = "/home/eugene /etc"
 [Xorg.variables]
 dpi = 120
 display = "eDP-1"
+resolution = "2560x1440"
