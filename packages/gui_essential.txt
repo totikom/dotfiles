@@ -33,6 +33,7 @@ kicad
 ktouch
 libreoffice-still
 libreoffice-still-ru
+maim
 mpv
 mullvad-vpn
 nextcloud-client
