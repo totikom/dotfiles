@@ -68,17 +68,20 @@ fi
 
 
 case $MINIMUM in
-	[0-9])
-		STATUS="Critical"
+	100)
+		STATUS="Good"
 		;;
-	[1-2]*)
-		STATUS="Critical"
+	[5-9]*)
+		STATUS="Good"
 		;;
 	[3-4]*)
 		STATUS="Warning"
 		;;
-	[5-9]*)
-		STATUS="Good"
+	[1-2]*)
+		STATUS="Critical"
+		;;
+	[0-9])
+		STATUS="Critical"
 		;;
 	*)
 		STATUS="Info"
