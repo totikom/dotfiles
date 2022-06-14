@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -e "power on\nconnect {{address}}" | bluetoothctl
+echo -e "power on\ndisconnect {{address}}\nconnect {{address}}" | bluetoothctl
