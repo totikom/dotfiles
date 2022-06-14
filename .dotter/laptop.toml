@@ -1,6 +1,7 @@
 [borg.variables]
 target = "ThinkPad_Borg"
-mountpoint = "192.168.1.68:/mnt/Backup"
+address = "192.168.1.68"
+mountpoint = "/mnt/Backup"
 backups = "/home/eugene /etc"
 
 [Xorg.variables]

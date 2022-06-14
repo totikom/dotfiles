@@ -1,7 +1,12 @@
 #!/bin/bash
 
 # The backup partition is mounted there
+
+{{#if (eq (command_output "hostname") "Main-pc\n")}}
 MOUNTPOINT={{mountpoint}}
+{{else}}
+MOUNTPOINT={{mountpoint}}:{{address}}:{{port}}
+{{/if}}
 
 # This is the location of the Borg repository
 TARGET=$MOUNTPOINT/{{target}}
