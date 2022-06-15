@@ -30,10 +30,10 @@ exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:shift_caps_switch' -o
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id 'xss-lock  -- betterlockscreen -l dim --off 30'
-exec --no-startup-id 'betterlockscreen -u ~/manjaro_triangles_wallpaper_1920x1200px.jpg'
-exec --no-startup-id '~/.config/i3/lock_screen.sh'
-exec --no-startup-id '~/.fehbg &'
+exec --no-startup-id xss-lock -- betterlockscreen -l dim --off 30
+exec --no-startup-id betterlockscreen -u ~/manjaro_triangles_wallpaper_1920x1200px.jpg
+exec --no-startup-id ~/.config/i3/lock_screen.sh
+exec --no-startup-id ~/.fehbg
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
