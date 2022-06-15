@@ -59,7 +59,7 @@ ssh = {target = "/etc/ssh", type = "template", owner = "root"}
 "pacman/pacman.conf" = {target = "/etc/pacman.conf", type = "template", owner = "root"}
 
 [i3]
-depends = ["betterlockscreen", "i3status-rs"]
+depends = ["betterlockscreen", "i3status-rs", "rofi"]
 
 [i3.files]
 i3 = "~/.config/i3"
@@ -93,3 +93,7 @@ betterlockscreen = "~/.config"
 
 [i3status-rs.files]
 i3status-rs = "~/.config/i3status-rust"
+
+[rofi.files]
+rofi = "~/.config/rofi"
+
