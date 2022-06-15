@@ -2,4 +2,4 @@
 .dotter/cache.toml
 .dotter/cache
 .dotter/private/*.toml
-.dotter/private/*.patch
+.dotter/private/*.new
