@@ -4,6 +4,7 @@ icons = "awesome6"
 [[block]]
 block = "music"
 buttons = ["play", "next"]
+on_click = "cantata"
 hide_when_empty = true
 
 [[block]]
@@ -35,7 +36,6 @@ block = "sound"
 block = "networkmanager"
 on_click = "alacritty -e nmtui"
 interface_name_exclude = ['br\-[0-9a-f]{12}', 'docker\d+']
-interface_name_include = []
 device_format = "{icon}{ap}"
 
 {{#if (eq (command_output "hostname") "ThinkPad\n")}}
