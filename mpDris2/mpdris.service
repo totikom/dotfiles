@@ -1,0 +1,11 @@
+[Unit]
+Description=MPD MPRIS2 service
+After=mpd.service
+Requires=mpd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/mpDris2
+
+[Install]
+WantedBy=mpd.socket

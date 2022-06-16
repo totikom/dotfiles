@@ -35,6 +35,7 @@ mc
 mpc
 mpd
 mpdas
+mpdris2
 ncdu
 neofetch
 nerd-fonts-noto-sans-mono

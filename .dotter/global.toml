@@ -71,7 +71,7 @@ i3 = "~/.config/i3"
 "Xorg/thinkpad" = {target = "/etc/X11/xorg.conf.d/20-thinkpad.conf", type = "template", owner = "root", if = '(eq (command_output "hostname") "ThinkPad\n")'}
 
 [mpd]
-depends = ["mpdas"]
+depends = ["mpdas", "mpdris2"]
 
 [mpd.files]
 mpd = "~/.config/mpd"
@@ -97,3 +97,6 @@ i3status-rs = "~/.config/i3status-rust"
 [rofi.files]
 rofi = "~/.config/rofi"
 
+[mpdris2.files]
+"mpDris2/mpDris2.conf" = "~/.config/mpDris2/mpDris2.conf"
+"mpDris2/mpdris.service" = "~/.config/systemd/user/mpdris.service"
