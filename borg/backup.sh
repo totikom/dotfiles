@@ -12,7 +12,11 @@ MOUNTPOINT=ssh://{{address}}:{{port}}{{mountpoint}}
 TARGET=$MOUNTPOINT/{{target}}
 
 #Passphrase
-export BORG_PASSCOMMAND="secret-tool lookup borg-repository $TARGET"
+{{#if (eq (command_output "hostname") "Main-pc\n")}}
+export BORG_PASSPHRASE="{{main_pass}}"
+{{else}}
+export BORG_PASSPHRASE="{{thinkpad_pass}}"
+{{/if}}
 
 DATE=$(date)
 
