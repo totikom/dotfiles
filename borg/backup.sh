@@ -5,7 +5,7 @@
 {{#if (eq (command_output "hostname") "Main-pc\n")}}
 MOUNTPOINT={{mountpoint}}
 {{else}}
-MOUNTPOINT={{mountpoint}}:{{address}}:{{port}}
+MOUNTPOINT=ssh://{{address}}:{{port}}{{mountpoint}}
 {{/if}}
 
 # This is the location of the Borg repository
