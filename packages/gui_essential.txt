@@ -25,7 +25,7 @@ homebank
 i3status-rust
 inkscape
 ivpn-ui
-joplin-desktop
+joplin-appimage
 jupyterlab
 kalzium
 keepassxc
