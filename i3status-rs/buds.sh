@@ -77,7 +77,13 @@ case $MINIMUM in
 	[3-4]*)
 		STATUS="Warning"
 		;;
-	[1-2]*)
+	2[5-9])
+		STATUS="Warning"
+		;;
+	2[0-4])
+		STATUS="Critical"
+		;;
+	1*)
 		STATUS="Critical"
 		;;
 	[0-9])
