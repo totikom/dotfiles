@@ -1,0 +1,2 @@
+bindsym $mod+b exec --no-startup-id echo -e "power on\nconnect {{buds_address}}" | bluetoothctl
+bindsym $mod+shift+b exec --no-startup-id echo -e "disconnect {{buds_address}}" | bluetoothctl
