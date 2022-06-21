@@ -52,6 +52,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 bindsym $mod + n exec --no-startup-id mpc next
 bindsym $mod + p exec --no-startup-id mpc prev
 
+# Consume track and go next
+bindsym $mod + shift + n exec --no-startup-id mpc consume on && mpc next && mpc consume off
+
 # Bluetooth hotkeys
 include ~/.config/i3/bluetooth
 
