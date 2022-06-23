@@ -88,7 +88,7 @@ set laststatus=2
 "set nofoldenable
 set autoread
 syntax on
-colorscheme industry
+colorscheme koehler
 
 "local settings
 "set keymap=russian-jcukenwin
