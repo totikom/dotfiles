@@ -29,6 +29,12 @@ json = true
 interval = 5
 hide_when_empty = true
 
+{{#if (eq (command_output "hostname") "ThinkPad\n")}}
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+
+{{/if}}
 [[block]]
 block = "sound"
 
