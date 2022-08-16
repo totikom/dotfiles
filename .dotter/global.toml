@@ -47,6 +47,9 @@ pueue = "~/.config/pueue"
 
 [borg.files]
 "borg/backup.sh" = "~/.local/bin/backup.sh"
+"borg/ThinkPad.sh" = {target = "~/.local/bin/ThinkPad.sh", type = "template", if = '(eq (command_output "hostname") "BackupStick\n")'}
+"borg/Main-pc.sh" = {target = "~/.local/bin/Main-pc.sh", type = "template", if = '(eq (command_output "hostname") "BackupStick\n")'}
+"borg/Triana.sh" = {target = "~/.local/bin/Triana.sh", type = "template", if = '(eq (command_output "hostname") "BackupStick\n")'}
 "borg/exclusions" = "~/.borg/exclusions"
 
 [ssh.files]
