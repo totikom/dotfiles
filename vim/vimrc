@@ -161,6 +161,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 map ,, :w<CR>:Ctest<CR>
+map ,b :w<CR>:Cbench<CR>
 map ,l :w<CR>:Ctest --lib<CR>
 map ,q :w<CR>:Ctest -q<CR>
 map ,f :RustFmt<CR>:w<CR>
