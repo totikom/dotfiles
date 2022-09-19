@@ -50,7 +50,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 bindsym $mod + n exec --no-startup-id mpc next
-bindsym $mod + p exec --no-startup-id mpc prev
+bindsym $mod + shift + p exec --no-startup-id mpc prev
 
 exec --no-startup-id systemctl --user start mpd.service mpdas.service mpdris.service
 
@@ -69,6 +69,7 @@ bindsym $mod+z exec firefox
 
 # Tabbed by default
 workspace_layout tabbed
+hide_edge_borders smart
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -83,10 +84,6 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -111,10 +108,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+y split h
+bindsym $mod+y split horizontal
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split vertical
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -132,7 +129,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
 bindsym $mod+c focus child
