@@ -162,9 +162,12 @@ nmap ga <Plug>(EasyAlign)
 
 map ,, :w<CR>:Ctest<CR>
 map ,b :w<CR>:Cbench<CR>
-map ,l :w<CR>:Ctest --lib<CR>
-map ,q :w<CR>:Ctest -q<CR>
+map ,d :w<CR>:Cdoc<CR>
 map ,f :RustFmt<CR>:w<CR>
+map ,l :w<CR>:Ctest --lib<CR>
+map ,p :w<CR>:Cdoc --document-private-items<CR>
+map ,q :w<CR>:Ctest -q<CR>
+map ,r :w<CR>:Crun<CR>
 "Rust Embedded
 map ,e :w<CR>:Cargo embed<CR>
 
