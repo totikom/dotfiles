@@ -52,11 +52,6 @@ format = "{percentage} {time}"
 
 {{/if}}
 [[block]]
-block = "time"
-interval = 5
-format = "%a %d/%m %R"
-
-[[block]]
 block = "pacman"
 interval = 600
 format = "{pacman} + {aur} = {both} updates"
@@ -64,3 +59,8 @@ format_singular = "{both} updates"
 format_up_to_date = "up to date"
 critical_updates_regex = "(linux*)"
 aur_command = "paru -Qua"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %d/%m %R"
