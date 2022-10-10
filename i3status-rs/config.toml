@@ -54,9 +54,9 @@ format = "{percentage} {time}"
 [[block]]
 block = "pacman"
 interval = 600
-format = "{pacman} + {aur} = {both} updates"
-format_singular = "{both} updates"
-format_up_to_date = "up to date"
+format = "{pacman}+{aur}"
+format_singular = "{both}"
+format_up_to_date = "ok"
 critical_updates_regex = "(linux*)"
 aur_command = "paru -Qua"
 
