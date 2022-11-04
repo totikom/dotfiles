@@ -43,7 +43,6 @@ if [[ -z "$ZELLIJ_RUN" ]]; then
 fi
 
 PATH=$PATH:~/.cargo/bin
-PATH="$PATH:/home/eugene/.local/share/solana/install/active_release/bin"
 
 export EDITOR='vim'
 export VISUAL='vim'
