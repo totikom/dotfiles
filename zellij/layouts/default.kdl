@@ -8,8 +8,8 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
-    tab
-    tab
-    tab
-    tab
+    tab name="zsh"
+    tab name="zsh"
+    tab name="solcery" cwd="./Documents/Repo/solcery/on-chain"
+    tab name="solcery build" cwd="./Documents/Repo/solcery/on-chain"
 }
