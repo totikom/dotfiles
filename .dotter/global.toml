@@ -35,6 +35,9 @@ paru = "~/.config/paru"
 
 [zsh.files]
 "zsh/zshrc" = "~/.zshrc"
+"zsh/plugins" = "~/.zsh/plugins"
+"zsh/command-not-found.zsh" = "~/.zsh/command-not-found.zsh"
+"zsh/manjaro-zsh-config" = "~/.zsh/manjaro-zsh-config"
 
 [cargo.files]
 cargo = "~/.cargo"
