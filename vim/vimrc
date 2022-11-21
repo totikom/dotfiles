@@ -162,6 +162,7 @@ nmap ga <Plug>(EasyAlign)
 
 map ,, :w<CR>:Ctest<CR>
 map ,b :w<CR>:Cbench<CR>
+map ,c :w<CR>:Ccheck<CR>
 map ,d :w<CR>:Cdoc<CR>
 map ,f :RustFmt<CR>:w<CR>
 map ,l :w<CR>:Ctest --lib<CR>

@@ -106,3 +106,6 @@ rofi = "~/.config/rofi"
 [mpdris2.files]
 "mpDris2/mpDris2.conf" = "~/.config/mpDris2/mpDris2.conf"
 "mpDris2/mpdris.service" = "~/.config/systemd/user/mpdris.service"
+
+[nu.files]
+nu = "~/.config/nushell"
