@@ -32,8 +32,9 @@ alias ps='pueue status'
    #export TERM=screen-256color
    #screen -xRR autoscreen
 #fi
+
 # Zellij
-if [[ -z "$ZELLIJ_RUN" ]]; then
+if [[ (-z "$ZELLIJ_RUN") && ("$TERM_PROGRAM" != "vscode") ]]; then
 	export ZELLIJ_RUN=1234
 	if zellij -s main
 	then
