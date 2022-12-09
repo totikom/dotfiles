@@ -71,6 +71,7 @@ vim-spell-ru
 wine
 wireguard-dkms
 xclip
+xkb-switch-i3
 yay
 yubikey-manager
 yubikey-personalization
