@@ -20,3 +20,5 @@
 [tag]
 	gpgSign = true
 	forceSignAnnotated = false
+[push]
+	autoSetupRemote = true

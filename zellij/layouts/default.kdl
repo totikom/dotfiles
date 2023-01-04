@@ -12,4 +12,6 @@ layout {
     tab name="zsh"
     tab name="solcery" cwd="./Documents/Repo/solcery/on-chain"
     tab name="solcery build" cwd="./Documents/Repo/solcery/on-chain"
+    tab name="atom" cwd="./Documents/Repo/lab/masters"
+    tab name="atom build" cwd="./Documents/Repo/lab/masters"
 }
