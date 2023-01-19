@@ -109,3 +109,6 @@ rofi = "~/.config/rofi"
 
 [nu.files]
 nu = "~/.config/nushell"
+
+[helix.files]
+helix = "~/.config/helix"
