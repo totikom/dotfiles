@@ -112,3 +112,7 @@ nu = "~/.config/nushell"
 
 [helix.files]
 helix = "~/.config/helix"
+
+[qmk.files]
+"qmk/qmk.ini" = "~/.config/qmk/qmk.ini"
+"qmk/layouts" = {target = "~/qmk_firmware/keyboards", type = "symbolic"}
