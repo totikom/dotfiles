@@ -28,6 +28,9 @@ Section "InputClass"
         MatchIsKeyboard "on"
         MatchDevicePath "/dev/input/event*"
         Driver "libinput"
+	Option "XkbLayout" "us,ru"
+	Option "XkbModel" "pc105"
+	Option "XkbOptions" "grp:shift_caps_switch,grp_led:caps"
 EndSection
 
 Section "InputClass"

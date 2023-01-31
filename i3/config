@@ -23,7 +23,7 @@ font pango:monospace 12
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:caps_toggle'"
-exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:shift_caps_switch' -option 'grp_led:caps'"
+#exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:shift_caps_switch' -option 'grp_led:caps'"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -64,7 +64,7 @@ include ~/.config/i3/bluetooth
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+space exec alacritty
 bindsym $mod+z exec firefox
 
 # Tabbed by default
@@ -126,7 +126,7 @@ bindsym $mod+e layout default
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+ctrl+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+p focus parent
