@@ -56,7 +56,8 @@ pueue = "~/.config/pueue"
 "borg/exclusions" = "~/.borg/exclusions"
 
 [ssh.files]
-ssh = {target = "/etc/ssh", type = "template", owner = "root"}
+"ssh/sshd_config" = {target = "/etc/ssh/sshd_config", type = "template", owner = "root"}
+"ssh/ssh_config" = "~/ssh/ssh_config"
 
 [git.files]
 "git/config" = "~/.gitconfig"
