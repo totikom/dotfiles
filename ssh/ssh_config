@@ -17,7 +17,7 @@
 # list of available options, their meanings and defaults, please see the
 # ssh_config(5) man page.
 
-# Host *
+Host *
 #   ForwardAgent no
 #   ForwardX11 no
 #   PasswordAuthentication yes
@@ -29,7 +29,8 @@
 #   AddressFamily any
 #   ConnectTimeout 0
 #   StrictHostKeyChecking ask
-#   IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/MSU
 #   IdentityFile ~/.ssh/id_dsa
 #   IdentityFile ~/.ssh/id_ecdsa
 #   IdentityFile ~/.ssh/id_ed25519
