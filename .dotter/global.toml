@@ -57,7 +57,7 @@ pueue = "~/.config/pueue"
 
 [ssh.files]
 "ssh/sshd_config" = {target = "/etc/ssh/sshd_config", type = "template", owner = "root"}
-"ssh/ssh_config" = "~/ssh/ssh_config"
+"ssh/ssh_config" = "~/.ssh/config"
 
 [git.files]
 "git/config" = "~/.gitconfig"
