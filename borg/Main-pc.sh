@@ -27,6 +27,7 @@ if [ -n "$1"  ]; then
 	# Prune
 	echo 'Prunning:'
 	borg prune -v --list --stats $PRUNE_OPTS $TARGET
+	borg compact --verbose --progress $TARGET
   else
 	#
 	# Create backups

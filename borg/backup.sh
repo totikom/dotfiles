@@ -49,6 +49,7 @@ PRUNE_OPTS="-d 7 -w 5 -m 6 -y 2"
 if [ -n "$1"  ]; then
 	echo 'Prunning:'
 	borg prune -v --list --stats $PRUNE_OPTS $TARGET
+	borg compact --verbose --stats --progress $TARGET
   else
 	echo 'Backups to prune:'
 	borg prune -v --list --dry-run $PRUNE_OPTS $TARGET
