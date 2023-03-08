@@ -38,6 +38,7 @@ if [[ (-z "$ZELLIJ_RUN") && ("$TERM_PROGRAM" != "vscode") ]]; then
 	export ZELLIJ_RUN=1234
 	if zellij -s main
 	then
+		eval "$(ssh-agent)"
 	else
 		zellij attach main
 	fi
