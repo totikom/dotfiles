@@ -10,7 +10,7 @@ TARGET=$MOUNTPOINT/ThinkPad
 #Passphrase
 export BORG_PASSPHRASE="{{thinkpad_offline_pass}}"
 
-PRUNE_OPTS="-d 7 -w 5 -m 6 -y 2"
+PRUNE_OPTS="-d 1 -w 8 -m 6 -y 5"
 
 DATE=$(date)
 
