@@ -23,6 +23,8 @@ Plugin 'scrooloose/nerdcommenter'
 "Plugin 'andymass/vim-matchup'
 Plugin 'vim-scripts/auto-pairs-gentle'
 Plugin 'ARM9/arm-syntax-vim'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'liuchengxu/vista.vim'
 "Plugin 'vim-latex/vim-latex'
 
 "LaTeX
@@ -127,7 +129,6 @@ set wildmode=full,full
 
 au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv7"
 
-
 "LaTeX-Suite
  "OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
  "'plaintex' instead of 'tex', which results in vim-latex not being loaded.
@@ -176,3 +177,6 @@ map ,r :w<CR>:Crun<CR>
 "Rust Embedded
 map ,e :w<CR>:Cargo embed<CR>
 
+"clang-format
+g:clang_format#enable_fallback_style=0
+g:clang_format#detect_style_file=1
