@@ -69,6 +69,10 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 bindsym $mod+z exec firefox
 
+# Screen rotation
+bindsym $mod+o exec --no-startup-id ~/.config/i3/auto-screen-rotate.sh
+bindsym $mod+shift+o exec --no-startup-id killall auto-screen-rotate.sh
+
 # Tabbed by default
 workspace_layout tabbed
 hide_edge_borders smart
