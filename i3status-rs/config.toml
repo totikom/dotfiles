@@ -1,22 +1,25 @@
+[theme]
 theme = "solarized-dark"
+
+[icons]
 icons = "awesome6"
 
 [[block]]
 block = "music"
-buttons = ["play", "next"]
-on_click = "cantata"
-hide_when_empty = true
+format = " $icon {$combo.str(max_w:20) $play $next |}"
+[[block.click]]
+button = "left"
+cmd = "cantata"
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "{mem_used_percents}"
-icons = true
 interval = 5
 warning_mem = 80
 critical_mem = 95
 warning_swap = 80
 critical_swap = 95
+format = " $icon $mem_total_used_percents.eng(w:2) "
+format_alt = " $icon_swap $swap_free.eng(w:3,u:B,p:M)/$swap_total.eng(w:3,u:B,p:M)($swap_used_percents.eng(w:2)) "
 
 [[block]]
 block = "cpu"
@@ -39,28 +42,43 @@ device = "intel_backlight"
 block = "sound"
 
 [[block]]
-block = "networkmanager"
-on_click = "alacritty -e nmtui"
-interface_name_exclude = ['br\-[0-9a-f]{12}', 'docker\d+']
-device_format = "{icon}{ap}"
+block = "net"
+format = " $icon {$signal_strength $ssid |Wired connection}"
+format_alt = " $icon ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K) "
+[[block.click]]
+button = "left"
+cmd = "alacritty -e nmtui"
+[[block.click]]
+button = "right"
+action = "toggle_format"
+[block.theme_overrides]
+idle_fg = { link = "good_fg" }
+idle_bg = { link = "good_bg" }
 
 {{#if (eq (command_output "hostname") "ThinkPad\n")}}
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage} {time}"
+format = " $icon $percentage $time "
+full_threshold = 99
+info = 70
+good = 60
+warning = 30
+critical = 15
+empty_threshold = 6
 
 {{/if}}
 [[block]]
 block = "pacman"
 interval = 600
-format = "{pacman}+{aur}"
-format_singular = "{both}"
-format_up_to_date = "ok"
+format = " $icon $pacman + $aur "
+format_singular = " $icon $both "
+format_up_to_date = " ok "
 critical_updates_regex = "(linux*)"
 aur_command = "paru -Qua"
 
 [[block]]
 block = "time"
 interval = 5
-format = "%a %d/%m %R"
+[block.format]
+full = " $icon $timestamp.datetime(f:'%a %d/%m %R') "
