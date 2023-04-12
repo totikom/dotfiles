@@ -31,6 +31,7 @@ Plugin 'liuchengxu/vista.vim'
 Plugin 'lervag/vimtex'
 Plugin 'sirver/ultisnips'
 Plugin 'KeitaNakamura/tex-conceal.vim'
+Plugin 'kaarmu/typst.vim'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'

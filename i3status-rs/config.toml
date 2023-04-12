@@ -61,11 +61,13 @@ block = "battery"
 interval = 10
 format = " $icon $percentage $time "
 full_threshold = 99
-info = 70
-good = 60
+info = 60
 warning = 30
 critical = 15
 empty_threshold = 6
+[block.theme_overrides]
+idle_fg = { link = "good_fg" }
+idle_bg = { link = "good_bg" }
 
 {{/if}}
 [[block]]
