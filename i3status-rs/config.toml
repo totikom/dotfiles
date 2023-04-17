@@ -43,7 +43,7 @@ block = "sound"
 
 [[block]]
 block = "net"
-format = " $icon {$signal_strength $ssid |Wired connection}"
+format = " $icon {$signal_strength $ssid |}"
 format_alt = " $icon ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K) "
 [[block.click]]
 button = "left"

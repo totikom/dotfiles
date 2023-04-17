@@ -20,7 +20,7 @@ alias maxima=rmaxima
 alias x='gio trash'
 alias torrents='watch transmission-remote -t active -l -st'
 alias gf='git flow'
-umask 027
+umask 022
 
 #pueue
 alias pa='pueue add --'

@@ -46,18 +46,18 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioNext exec --no-startup-id mpc next
 bindsym XF86AudioPrev exec --no-startup-id mpc prev
+# Consume track and go next
+bindsym shift + XF86AudioNext exec --no-startup-id mpc consume on && mpc next && mpc consume off
+
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-bindsym $mod + n exec --no-startup-id mpc next
-bindsym $mod + shift + p exec --no-startup-id mpc prev
+#bindsym $mod + n exec --no-startup-id mpc next
+#bindsym $mod + shift + p exec --no-startup-id mpc prev
 
 exec --no-startup-id systemctl --user start mpd.service mpdas.service mpdris.service
-
-# Consume track and go next
-bindsym $mod + shift + n exec --no-startup-id mpc consume on && mpc next && mpc consume off
 
 # Bluetooth hotkeys
 include ~/.config/i3/bluetooth
