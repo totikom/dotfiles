@@ -55,6 +55,15 @@ action = "toggle_format"
 idle_fg = { link = "good_fg" }
 idle_bg = { link = "good_bg" }
 
+[[block]]
+block = "vpn"
+driver = "mullvad"
+interval = 10
+format_connected = "$icon "
+format_disconnected = " $icon "
+state_connected = "good"
+state_disconnected = "critical"
+
 {{#if (eq (command_output "hostname") "ThinkPad\n")}}
 [[block]]
 block = "battery"

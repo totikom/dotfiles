@@ -246,6 +246,6 @@ for_window [title="Yubico Authenticator"] floating enable
 # finds out, if available)
 bar {
 	font pango:monospace 10
-	status_command i3status-rs
+	status_command ~/.cargo/bin/i3status-rs
 	position top
 }
