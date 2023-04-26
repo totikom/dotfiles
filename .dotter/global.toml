@@ -120,4 +120,4 @@ helix = "~/.config/helix"
 "qmk/layouts" = {target = "~/qmk_firmware/keyboards", type = "symbolic"}
 
 [ctags.files]
-"ctags/ctags" = "~/.ctags"
+"ctags/ctags" = "~/.ctags.d"
