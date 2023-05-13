@@ -10,6 +10,7 @@ depends = [
 	"paru",
 	"pueue",
 	"starship",
+	"ttdl",
 	"vim",
 	"zathura",
 	"zellij",
@@ -121,3 +122,7 @@ helix = "~/.config/helix"
 
 [ctags.files]
 "ctags/ctags" = "~/.ctags.d"
+
+[ttdl.files]
+ttdl = "~/.config/ttdl"
+
