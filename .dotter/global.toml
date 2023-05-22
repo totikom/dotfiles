@@ -6,6 +6,7 @@ depends = [
 	"cargo",
 	"ctags",
 	"earbuds",
+	"gdb",
 	"git",
 	"paru",
 	"pueue",
@@ -126,3 +127,5 @@ helix = "~/.config/helix"
 [ttdl.files]
 ttdl = "~/.config/ttdl"
 
+[gdb.files]
+"gdb/init" = "~/.gdbinit"

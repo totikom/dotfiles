@@ -88,7 +88,7 @@ creation_date_auto = true
 
 # fields that are displayed by default. Available fields:
 #   pri, done, due, created, finished, thr
-fields = "pri,due,done,prj"
+fields = "pri,done,ctx"
 
 # default sorting
 # sort = "pri"
@@ -132,7 +132,7 @@ clean_subject = "all"
 [syntax]
 # Set enabled to 'true' to highlight projects, contexts, tags, and hashtags
 #     inside the subject
-# enabled = false
+enabled = true
 tag_color = "bright cyan"
 hashtag_color = "cyan"
 project_color = "bright green"
