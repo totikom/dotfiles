@@ -25,6 +25,7 @@ Plugin 'vim-scripts/auto-pairs-gentle'
 Plugin 'ARM9/arm-syntax-vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'liuchengxu/vista.vim'
+Plugin 'rhysd/vim-llvm'
 "Plugin 'vim-latex/vim-latex'
 
 "LaTeX

@@ -12,6 +12,6 @@ layout {
     tab name="zsh"
     tab name="bot" cwd="./Documents/Repo/personal/tgsm"
     tab name="bot build" cwd="./Documents/Repo/personal/tgsm"
-    tab name="atom" cwd="./Documents/Repo/lab/masters"
-    tab name="atom build" cwd="./Documents/Repo/lab/masters"
+    tab name="tm" cwd="./Documents/Repo/personal/tm"
+    tab name="tm build" cwd="./Documents/Repo/personal/tm"
 }

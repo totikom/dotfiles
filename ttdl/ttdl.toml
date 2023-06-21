@@ -88,7 +88,7 @@ creation_date_auto = true
 
 # fields that are displayed by default. Available fields:
 #   pri, done, due, created, finished, thr
-fields = "pri,done,ctx"
+fields = "pri,done,ctx,prj"
 
 # default sorting
 # sort = "pri"
