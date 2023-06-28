@@ -129,3 +129,6 @@ ttdl = "~/.config/ttdl"
 
 [gdb.files]
 "gdb/init" = "~/.gdbinit"
+
+[beets.files]
+beets = "~/.config/beets"

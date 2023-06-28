@@ -26,6 +26,8 @@ umask 022
 alias pa='pueue add --'
 alias pl='pueue log'
 alias ps='pueue status'
+alias pf='pueue follow'
+alias pc='pueue clean'
 
 # screen
 #if [[ -z "$STY" ]]; then
@@ -69,3 +71,5 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 alias slm-build='cmake --build ../build-libslm-Desktop-Debug --target all'
+
+export IPFS_PATH=/mnt/Media/ipfs

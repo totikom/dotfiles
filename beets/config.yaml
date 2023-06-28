@@ -1,0 +1,24 @@
+directory: /mnt/Media/Music
+library: /mnt/Media/Music/musiclibrary.db
+
+import:
+    move: yes
+
+clutter: ["*.log", "*.cue", "*.jpg", "*.png", "*.pdf", "*.txt"]
+
+plugins: unimported ipfs check
+
+unimported:
+    ignore_extensions: jpg png pdf txt log cue
+    ignore_subdirectories: UNIMPORTED
+
+ipfs:
+    nocopy: true
+    auto: no
+
+check:
+  import: yes
+  write-check: yes
+  write-update: yes
+  convert-update: yes
+  threads: 4
