@@ -3,14 +3,16 @@ library: /mnt/Media/Music/musiclibrary.db
 
 import:
     move: yes
+    incremental: yes
+    incremental_skip_later: yes
 
-clutter: ["*.log", "*.cue", "*.jpg", "*.png", "*.pdf", "*.txt"]
+clutter: ["*.log", "*.cue", "*.jpg", "*.png", "*.pdf", "*.txt", "Scans", "scans", "Artwork"]
 
-plugins: unimported ipfs check
+plugins: unimported ipfs check chroma
 
 unimported:
-    ignore_extensions: jpg png pdf txt log cue
     ignore_subdirectories: UNIMPORTED
+    ignore_extensions: db
 
 ipfs:
     nocopy: true

@@ -22,6 +22,7 @@ font pango:monospace 12
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id listenbrainz-mpd
 #exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:caps_toggle'"
 #exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:shift_caps_switch' -option 'grp_led:caps'"
 

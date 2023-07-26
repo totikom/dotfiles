@@ -81,7 +81,7 @@ i3 = "~/.config/i3"
 "Xorg/thinkpad" = {target = "/etc/X11/xorg.conf.d/20-thinkpad.conf", type = "template", owner = "root", if = '(eq (command_output "hostname") "ThinkPad\n")'}
 
 [mpd]
-depends = ["mpdas", "mpdris2"]
+depends = ["mpdas", "mpdris2", "listenbrainz"]
 
 [mpd.files]
 mpd = "~/.config/mpd"
@@ -132,3 +132,6 @@ ttdl = "~/.config/ttdl"
 
 [beets.files]
 beets = "~/.config/beets"
+
+[listenbrainz.files]
+"listenbrainz-mpd" = "~/.config/listenbrainz-mpd"
