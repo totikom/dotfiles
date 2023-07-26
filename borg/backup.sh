@@ -23,34 +23,33 @@ DATE=$(date)
 BACKUPS="{{backups}}"
 SPACED=""
 
-#
-# Create backups
-#
-
 # Options for borg create
 BORG_OPTS="--stats --progress"
+
+PRUNE_OPTS="-d 1 -w 8 -m 6 -y 5"
 
 # Log Borg version
 borg --version
 
-echo "Starting backup for $DATE"
-
-borg create $BORG_OPTS \
-	$TARGET::{now} \
-	$BACKUPS \
-	--exclude-from /home/eugene/.borg/exclusions
-
-echo "Completed backup for $DATE"
-
-# Prune
-
-PRUNE_OPTS="-d 7 -w 5 -m 6 -y 2"
-
 if [ -n "$1"  ]; then
+	# Prune
 	echo 'Prunning:'
 	borg prune -v --list --stats $PRUNE_OPTS $TARGET
-	borg compact --verbose --stats --progress $TARGET
+	borg compact --verbose --progress $TARGET
   else
+	#
+	# Create backups
+	#
+
+	echo "Starting backup for $DATE"
+
+	borg create $BORG_OPTS \
+		$TARGET::{now} \
+		$BACKUPS \
+		--exclude-from /home/eugene/.borg/exclusions
+
+	echo "Completed backup for $DATE"
+
 	echo 'Backups to prune:'
 	borg prune -v --list --dry-run $PRUNE_OPTS $TARGET
 fi
