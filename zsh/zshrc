@@ -46,7 +46,7 @@ if [[ (-z "$ZELLIJ_RUN") && ("$TERM_PROGRAM" != "vscode") ]]; then
 	fi
 fi
 
-PATH=$PATH:~/.cargo/bin
+PATH=~/.nix-profile/bin:$PATH:~/.cargo/bin
 
 export EDITOR='vim'
 export VISUAL='vim'

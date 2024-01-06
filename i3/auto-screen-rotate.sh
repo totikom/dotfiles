@@ -16,10 +16,10 @@
 MONITOR=eDP1
 
 # Configure these to match your hardware (names taken from `xinput` output).
-TOUCHPAD='TPPS/2 IBM TrackPoint'
-TOUCHSCREENp='Wacom Pen and multitouch sensor Pen stylus'
-TOUCHSCREENe='Wacom Pen and multitouch sensor Pen eraser'
-TOUCHSCREENf='Wacom Pen and multitouch sensor Finger touch'
+THINKPOINT='TPPS/2 IBM TrackPoint'
+TOUCHPAD='SynPS/2 Synaptics TouchPad'
+TOUCHSCREENp='Wacom Pen and multitouch sensor Pen'
+TOUCHSCREENf='Wacom Pen and multitouch sensor Finger'
 
 monitor-sensor \
 	| grep --line-buffered "Accelerometer orientation changed" \
@@ -46,6 +46,5 @@ monitor-sensor \
 		echo $rotate
 		xrandr --output "$MONITOR" --rotate "$rotate"
 		xinput set-prop "$TOUCHSCREENp" --type=float "Coordinate Transformation Matrix" $matrix
-		xinput set-prop "$TOUCHSCREENe" --type=float "Coordinate Transformation Matrix" $matrix
 		xinput set-prop "$TOUCHSCREENf" --type=float "Coordinate Transformation Matrix" $matrix
 	done
