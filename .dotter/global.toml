@@ -73,11 +73,15 @@ depends = ["betterlockscreen", "i3status-rs", "rofi"]
 
 [i3.files]
 i3 = "~/.config/i3"
+"i3/wallpaper.jpg" = {target = "~/.config/i3/wallpaper.jpg", type = "symbolic"}
+"i3/lock_screen.jpg" = {target = "~/.config/i3/lock_screen.jpg", type = "symbolic"}
 
 [Xorg.files]
 "Xorg/Xresources" = "~/.Xresources"
+"Xorg/xinitrc" = "~/.xinitrc"
 "Xorg/input" = {target = "/etc/X11/xorg.conf.d/40-libinput.conf", type = "template", owner = "root"}
 "Xorg/monitor" = {target = "/etc/X11/xorg.conf.d/40-monitor.conf", type = "template", owner = "root", if = '(eq (command_output "hostname") "Main-pc\n")'}
+"Xorg/intel" = {target = "/etc/X11/xorg.conf.d/10-intel.conf", type = "template", owner = "root", if = '(eq (command_output "hostname") "ThinkPad\n")'}
 "Xorg/thinkpad" = {target = "/etc/X11/xorg.conf.d/20-thinkpad.conf", type = "template", owner = "root", if = '(eq (command_output "hostname") "ThinkPad\n")'}
 
 [mpd]
@@ -99,7 +103,7 @@ transmission = "~/.config/transmission-daemon"
 earbuds = "~/.config/livebuds"
 
 [betterlockscreen.files]
-betterlockscreen = "~/.config"
+betterlockscreen = "~/.config/betterlockscreen/"
 
 [i3status-rs.files]
 i3status-rs = "~/.config/i3status-rust"
@@ -135,3 +139,7 @@ beets = "~/.config/beets"
 
 [listenbrainz.files]
 "listenbrainz-mpd" = "~/.config/listenbrainz-mpd"
+
+[mkinitcpio.files]
+"mkinitcpio/mkinitcpio.conf" = {target = "/etc/mkinitcpio.conf", type = "template", owner = "root"}
+"mkinitcpio/linux-lts.preset" = {target = "/etc/mkinitcpio.d/linux-lts.preset", type = "template", owner = "root"}

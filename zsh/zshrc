@@ -11,7 +11,7 @@ fi
 
 alias cp='xcp'
 alias grep='rg'
-alias ls='exa'
+alias ls='eza'
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
@@ -36,8 +36,7 @@ alias pc='pueue clean'
 #fi
 
 # Zellij
-if [[ (-z "$ZELLIJ_RUN") && ("$TERM_PROGRAM" != "vscode") ]]; then
-	export ZELLIJ_RUN=1234
+if [[ (-n "$DISPLAY") && (-z "$ZELLIJ") && ("$TERM_PROGRAM" != "vscode") ]]; then
 	if zellij -s main
 	then
 		eval "$(ssh-agent)"
