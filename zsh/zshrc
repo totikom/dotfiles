@@ -47,6 +47,9 @@ fi
 
 PATH=~/.nix-profile/bin:$PATH:~/.cargo/bin
 
+# cargo alias for no-default target location
+alias cargo="~/.cargo/cargo-alias.sh"
+
 export EDITOR='vim'
 export VISUAL='vim'
 
