@@ -143,3 +143,6 @@ beets = "~/.config/beets"
 [mkinitcpio.files]
 "mkinitcpio/mkinitcpio.conf" = {target = "/etc/mkinitcpio.conf", type = "template", owner = "root"}
 "mkinitcpio/linux-lts.preset" = {target = "/etc/mkinitcpio.d/linux-lts.preset", type = "template", owner = "root"}
+
+[snapper.files]
+"snapper/root" = {target = "/etc/snapper/configs/root", type = "template", owner = "root"}
