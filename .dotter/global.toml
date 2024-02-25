@@ -146,3 +146,6 @@ beets = "~/.config/beets"
 
 [snapper.files]
 "snapper/root" = {target = "/etc/snapper/configs/root", type = "template", owner = "root"}
+
+[snapborg.files]
+"snapborg/snapborg.yaml" = {target = "/etc/snapborg.yaml", type = "template", owner = "root"}
