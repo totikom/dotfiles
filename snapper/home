@@ -1,6 +1,6 @@
 
 # subvolume to snapshot
-SUBVOLUME="/"
+SUBVOLUME="/home"
 
 # filesystem type
 FSTYPE="btrfs"
