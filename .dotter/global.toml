@@ -67,6 +67,7 @@ pueue = "~/.config/pueue"
 
 [pacman.files]
 "pacman/pacman.conf" = {target = "/etc/pacman.conf", type = "template", owner = "root"}
+"pacman/reflector.conf" = {target = "/etc/xdg/reflector/reflector.conf", type = "template", owner = "root"}
 
 [i3]
 depends = ["betterlockscreen", "i3status-rs", "rofi"]
