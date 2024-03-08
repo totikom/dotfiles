@@ -148,7 +148,7 @@ beets = "~/.config/beets"
 [snapper.files]
 "snapper/root" = {target = "/etc/snapper/configs/root", type = "template", owner = "root"}
 "snapper/home" = {target = "/etc/snapper/configs/home", type = "template", owner = "root"}
-"snapper/95-bootbackup.hook" = {target = "/etc/pacman.d/hooks/95-bootbackup.hook", type = "template", owner = "root", if = '(eq (command_output "hostname") "ThinkPad\n")'}
+"snapper/zz-bootbackup.hook" = {target = "/etc/pacman.d/hooks/zz-bootbackup.hook", type = "template", owner = "root", if = '(eq (command_output "hostname") "ThinkPad\n")'}
 
 [snapborg.files]
 "snapborg/snapborg.yaml" = {target = "/etc/snapborg.yaml", type = "template", owner = "root"}
