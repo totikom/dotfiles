@@ -52,6 +52,7 @@ alias cargo="~/.cargo/cargo-alias.sh"
 
 export EDITOR='vim'
 export VISUAL='vim'
+export GPG_TTY=$(tty)
 
 {{#if (eq (command_output "hostname") "Main-pc\n")}}
 # Main-pc specific

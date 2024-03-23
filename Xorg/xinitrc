@@ -52,6 +52,7 @@ xss-lock -- betterlockscreen -l dim --off 30 &
 betterlockscreen -u ~/.config/i3/lock_screen.jpg & 
 ~/.config/i3/lock_screen.sh & 
 feh --no-fehbg --bg-scale ~/.config/i3/wallpaper.jpg
+export MOZ_USE_XINPUT2=1
 exec i3
 #xclock -geometry 50x50-1+1 &
 #xterm -geometry 80x50+494+51 &
