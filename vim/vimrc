@@ -26,6 +26,7 @@ Plugin 'ARM9/arm-syntax-vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'liuchengxu/vista.vim'
 Plugin 'rhysd/vim-llvm'
+Plugin 'tpope/vim-fugitive'
 "Plugin 'vim-latex/vim-latex'
 
 "LaTeX
@@ -83,7 +84,6 @@ set smartindent
 set wrap
 set history=500
 set number
-set relativenumber
 set showmatch
 set ruler
 set hlsearch
