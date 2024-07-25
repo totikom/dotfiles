@@ -68,7 +68,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+bindsym $mod+shift+Return exec killall alacritty && alacritty
 bindsym $mod+z exec firefox
+bindsym $mod+x exec nautilus
 
 # Screen rotation
 bindsym $mod+o exec --no-startup-id ~/.config/i3/auto-screen-rotate.sh

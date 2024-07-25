@@ -104,7 +104,6 @@ colorscheme koehler
 "
 let g:XkbSwitchEnabled = 1
 "let g:XkbSwitchLib = '/usr/local/lib/libg3kbswitch.so'
-let g:XkbSwitchLib = '/usr/lib/libxkbswitch.so'
 let g:XkbSwitchIMappings = ['ru']
 "let g:XkbSwitchSkipIMappings =
 	""\ {'*' : ['.', '>', ':', ';', ',', '{<CR>', '`', '/*', '/*<CR>'],}
