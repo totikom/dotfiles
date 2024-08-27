@@ -1,2 +1,2 @@
 includes = [".dotter/laptop.toml", ".dotter/private/private_vars.toml"]
-packages = ["Xorg", "alacritty","earbuds", "zellij", "zsh", "ssh", "vim", "cargo", "git", "gdb", "pacman", "paru", "i3", "mkinitcpio", "snapper", "snapborg"]
+packages = ["Xorg", "alacritty","earbuds", "zellij", "zsh", "ssh", "vim", "cargo", "git", "gdb", "pacman", "paru", "i3", "mkinitcpio", "snapper", "snapborg", "zathura"]

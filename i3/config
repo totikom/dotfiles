@@ -54,6 +54,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
 
 #bindsym $mod + n exec --no-startup-id mpc next
 #bindsym $mod + shift + p exec --no-startup-id mpc prev
