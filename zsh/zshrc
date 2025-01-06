@@ -72,7 +72,3 @@ export TERM=xterm-256color-italic
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-
-alias slm-build='cmake --build ../build-libslm-Desktop-Debug --target all'
-
-export IPFS_PATH=/mnt/Media/ipfs
