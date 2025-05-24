@@ -26,7 +26,7 @@
     "incomplete-dir": "/home/eugene/Downloads",
     "incomplete-dir-enabled": false,
     "lpd-enabled": false,
-    "message-level": 1,
+    "message-level": 2,
     "peer-congestion-algorithm": "",
     "peer-id-ttl-hours": 6,
     "peer-limit-global": 200,

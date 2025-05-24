@@ -4,7 +4,8 @@ library: /mnt/Media/Music/musiclibrary.db
 import:
     move: yes
     incremental: yes
-    incremental_skip_later: yes
+    #incremental_skip_later: yes
+    language: en ru
 
 clutter: ["*.log", "*.cue", "*.jpg", "*.png", "*.pdf", "*.txt", "Scans", "scans", "Artwork"]
 
