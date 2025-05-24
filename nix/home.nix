@@ -86,6 +86,65 @@
       vim = {
         enable = true;
         defaultEditor = true;
+        settings = {
+          history = 500;
+          ignorecase = true;
+          number = true;
+          smartcase = true;
+        };
+        plugins = with pkgs.vimPlugins; [
+          nerdcommenter
+          vim-matchup
+          auto-pairs
+          vim-llvm
+          vim-fugitive
+          typst-vim
+          tabular
+          vim-markdown
+          vim-easy-align
+          rust-vim
+          vim-gitgutter
+          # vim-xkbswitch
+        ];
+        extraConfig = "
+          set autoindent
+          set cursorline
+          set exrc
+          set foldmethod=indent
+          set hlsearch
+          set incsearch
+          set laststatus=2
+          set ruler
+          set secure
+          set showmatch
+          set showmode
+          set smartindent
+          set smarttab
+          set wrap
+          set autoread
+          syntax on
+
+          set wildmenu
+          set wildmode=full,full
+          :let mapleader = \",\"
+          \" Start interactive EasyAlign in visual mode (e.g. vipga)
+          xmap ga <Plug>(EasyAlign)
+
+          \" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+          nmap ga <Plug>(EasyAlign)
+
+          map ,, :w<CR>:Ctest<CR>
+          map ,b :w<CR>:Cbench<CR>
+          map ,c :w<CR>:Ccheck<CR>
+          map ,d :w<CR>:Cdoc<CR>
+          map ,f :RustFmt<CR>:w<CR>
+          map ,l :w<CR>:Ctest --lib<CR>
+          map ,p :w<CR>:Cdoc --document-private-items<CR>
+          map ,q :w<CR>:Ctest -q<CR>
+          map ,r :w<CR>:Crun<CR>
+          \"Rust Embedded
+          map ,e :w<CR>:Cargo embed<CR>
+          ";
       };
       zsh = {
         enable = true;
