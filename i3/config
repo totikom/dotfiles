@@ -31,9 +31,9 @@ exec --no-startup-id listenbrainz-mpd
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock -- betterlockscreen -l dim --off 30
-exec --no-startup-id betterlockscreen -u ~/manjaro_triangles_wallpaper_1920x1200px.jpg
-exec --no-startup-id ~/.config/i3/lock_screen.sh
+#exec --no-startup-id xss-lock -- betterlockscreen -l dim --off 30
+#exec --no-startup-id betterlockscreen -u ~/manjaro_triangles_wallpaper_1920x1200px.jpg
+#exec --no-startup-id ~/.config/i3/lock_screen.sh
 exec --no-startup-id ~/.fehbg
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
@@ -52,8 +52,10 @@ bindsym shift + XF86AudioNext exec --no-startup-id mpc consume on && mpc next &&
 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1
 
 #bindsym $mod + n exec --no-startup-id mpc next
 #bindsym $mod + shift + p exec --no-startup-id mpc prev
@@ -68,7 +70,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+bindsym $mod+shift+Return exec killall alacritty && alacritty
 bindsym $mod+z exec firefox
+bindsym $mod+x exec nautilus
 
 # Screen rotation
 bindsym $mod+o exec --no-startup-id ~/.config/i3/auto-screen-rotate.sh

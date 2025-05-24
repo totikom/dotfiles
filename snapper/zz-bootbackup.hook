@@ -1,0 +1,15 @@
+[Trigger]
+Type = Path
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = usr/lib/modules/*/vmlinuz
+Target = usr/lib/initcpio/*
+Target = usr/lib/firmware/*
+Target = usr/src/*/dkms.conf
+
+[Action]
+Depends = rsync
+Description = Backing up /efi...
+When = PostTransaction
+Exec = /usr/bin/bash -c 'rsync -a --mkpath --delete /efi/ /.efi_backup/'

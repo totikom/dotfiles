@@ -2,7 +2,7 @@
 theme = "solarized-dark"
 
 [icons]
-icons = "awesome6"
+icons = "awesome5"
 
 [[block]]
 block = "music"
@@ -70,10 +70,10 @@ block = "battery"
 interval = 10
 format = " $icon $percentage $time "
 full_threshold = 99
-info = 60
-warning = 40
-critical = 20
-empty_threshold = 6
+info = 50
+warning = 30
+critical = 10
+empty_threshold = 1
 [block.theme_overrides]
 idle_fg = { link = "good_fg" }
 idle_bg = { link = "good_bg" }
