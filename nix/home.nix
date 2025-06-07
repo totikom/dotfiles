@@ -1,4 +1,12 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+let
+  mod = "Mod4";
+in
 {
   home-manager.users.eugene = {
     # Home Manager needs a bit of information about you and the paths it should
@@ -18,7 +26,6 @@
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [
-      alacritty
       dotter
       eza
       firefox
@@ -26,6 +33,8 @@
       ncdu
       neofetch
       nixfmt-rfc-style
+      trashy
+      xorg.xbacklight
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
@@ -59,12 +68,22 @@
     home.sessionVariables = {
       SHELL = "${pkgs.zsh}/bin/zsh";
     };
+    home.shellAliases = {
+      ls = "eza";
+      x = "trash";
+    };
     programs = {
       zoxide = {
         enable = true;
       };
       bat = {
         enable = true;
+      };
+      alacritty = {
+        enable = true;
+        settings = {
+          font.size = 8.0;
+        };
       };
       git = {
         enable = true;
@@ -78,7 +97,10 @@
           key = "3197B6B3AE53574B";
           signByDefault = true;
         };
-        extraConfig.push.autoSetupRemote = true;
+        extraConfig = {
+          push.autoSetupRemote = true;
+          merge.tool = "vimdiff";
+        };
       };
       gitui = {
         enable = true;
@@ -123,6 +145,7 @@
           set wrap
           set autoread
           syntax on
+          colorscheme koehler
 
           set wildmenu
           set wildmode=full,full
@@ -151,11 +174,25 @@
         enableCompletion = true;
         autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
+        history = {
+          append = true;
+          expireDuplicatesFirst = true;
+          ignoreAllDups = true;
+          ignoreDups = true;
+          ignoreSpace = true;
+        };
+        historySubstringSearch.enable = true;
       };
       zellij = {
         enable = true;
         enableZshIntegration = true;
         attachExistingSession = true;
+        settings = {
+          on_force_close = "detach";
+          pane_frames = false;
+          ui.pane_frames.hide_session_name = true;
+          scroll_buffer_size = 100000;
+        };
       };
       starship = {
         enable = true;
@@ -253,8 +290,67 @@
     xsession.windowManager.i3 = {
       enable = true;
       config = {
-        modifier = "Mod4";
+        modifier = mod;
         terminal = "alacritty";
+        menu = "\"${pkgs.rofi}/bin/rofi -modi drun,run -show drun\"";
+        defaultWorkspace = "workspace number 1";
+        workspaceLayout = "tabbed";
+        fonts = {
+          names = [ "pango" ];
+          style = "monospace";
+          size = 12.0;
+        };
+        gaps = {
+          smartBorders = "on";
+          smartGaps = true;
+        };
+        keybindings = lib.mkOptionDefault {
+          "XF86MonBrightnessUp" = "exec xbacklight -inc 5";
+          "XF86MonBrightnessDown" = "exec xbacklight -dec 5";
+          "Shift+XF86MonBrightnessUp" = "exec xbacklight -inc 1";
+          "Shift+XF86MonBrightnessDown" = "exec xbacklight -dec 1";
+          # Move focus
+          "${mod}+z" = "exec firefox";
+          "${mod}+h" = "focus left";
+          "${mod}+j" = "focus down";
+          "${mod}+k" = "focus up";
+          "${mod}+l" = "focus right";
+          # Move window
+          "${mod}+Shift+h" = "move left";
+          "${mod}+Shift+j" = "move down";
+          "${mod}+Shift+k" = "move up";
+          "${mod}+Shift+l" = "move right";
+          # Layout
+          "${mod}+e" = "layout default";
+          "${mod}+y" = "split horizontal";
+          "${mod}+v" = "split vertical";
+          # Containers
+          "${mod}+p" = "focus parent";
+          "${mod}+c" = "focus child";
+
+          "${mod}+Shift+e" = "mode \"$system_mode\"";
+
+        };
+        modes = {
+          resize = {
+            h = "resize shrink width 10 px or 10 ppt";
+            j = "resize grow height 10 px or 10 ppt";
+            k = "resize shrink height 10 px or 10 ppt";
+            l = "resize grow width 10 px or 10 ppt";
+            Escape = "mode default";
+            Return = "mode default";
+            r = "mode default";
+          };
+          "$system_mode" = {
+            l = "exec --no-startup-id i3-msg exit, mode default";
+            s = "exec --no-startup-id systemctl suspend, mode default";
+            r = "exec --no-startup-id systemctl reboot, mode default";
+            "Shift + s" = "exec --no-startup-id systemctl poweroff -i, mode default";
+            Escape = "mode default";
+            Return = "mode default";
+          };
+
+        };
         bars = [
           {
             position = "top";
@@ -262,6 +358,7 @@
           }
         ];
       };
+      extraConfig = "set $system_mode System (l) logout, (s) suspend, (r) reboot, (Shift+s) shutdown";
     };
 
     # Let Home Manager install and manage itself.
