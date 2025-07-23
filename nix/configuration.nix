@@ -55,8 +55,12 @@
       windowManager.i3 = {
         enable = true;
       };
+
+      xkb.layout = "us,ru";
+      xkb.options = "grp:shift_caps_switch,grp_led:caps";
     };
     displayManager.defaultSession = "none+i3";
+
     pcscd.enable = true;
     # Enable sound.
     # hardware.pulseaudio.enable = true;
