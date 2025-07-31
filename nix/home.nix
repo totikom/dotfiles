@@ -29,6 +29,7 @@ in
       packages = with pkgs; [
         dotter
         eza
+        usbutils
         firefox
         htop
         ncdu
@@ -334,6 +335,7 @@ in
           "${mod}+c" = "focus child";
 
           "${mod}+Shift+e" = "mode \"$system_mode\"";
+          "${mod}+Shift+x" = "exec betterlockscreen -l dim --off 30 -u /home/eugene/Repo/personal/dotfiles/i3/lock_screen.jpg";
 
         };
         modes = {
@@ -364,6 +366,11 @@ in
         ];
       };
       extraConfig = "set $system_mode System (l) logout, (s) suspend, (r) reboot, (Shift+s) shutdown";
+    };
+    
+    services.betterlockscreen = {
+      enable = true;
+      arguments = ["dim" "-u" "/home/eugene/Repo/personal/dotfiles/i3/lock_screen.jpg" "--off" "30"];
     };
 
     # Let Home Manager install and manage itself.

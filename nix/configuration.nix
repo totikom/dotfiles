@@ -54,6 +54,9 @@
       desktopManager.xterm.enable = false;
       windowManager.i3 = {
         enable = true;
+        extraPackages = with pkgs; [
+          i3lock #default i3 screen locker
+        ];
       };
 
       xkb.layout = "us,ru";
@@ -80,7 +83,24 @@
     # Configure keymap in X11
     #services.xserver.xkb.layout = "us";
     # services.xserver.xkb.options = "eurosign:e,caps:escape";
+    auto-cpufreq.enable = true;
+    auto-cpufreq.settings = {
+      battery = {
+        governor = "powersave";
+        turbo = "never";
+      };
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+      };
+    };
   };
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=yes
+  '';
+  #AllowHibernation=no
+  #AllowHybridSleep=no
+  #AllowSuspendThenHibernate=no
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.eugene = {
