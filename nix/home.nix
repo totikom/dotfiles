@@ -96,17 +96,13 @@ in
   };
 
   programs = {
-    tealdeer = {
-      enable = true;
-    };
-    zoxide = {
-      enable = true;
-    };
-    bat = {
-      enable = true;
-    };
-    ripgrep.enable = true;
+    bat.enable = true;
     fd.enable = true;
+    gitui.enable = true;
+    ripgrep.enable = true;
+    tealdeer.enable = true;
+    zoxide.enable = true;
+
     alacritty = {
       enable = true;
       settings = {
@@ -129,9 +125,6 @@ in
         push.autoSetupRemote = true;
         merge.tool = "vimdiff";
       };
-    };
-    gitui = {
-      enable = true;
     };
     vim = {
       enable = true;
