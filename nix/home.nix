@@ -28,13 +28,14 @@ in
     packages = with pkgs; [
       dotter
       eza
-      usbutils
       firefox
       htop
       ncdu
       neofetch
+      nix-output-monitor
       nixfmt-rfc-style
       trashy
+      usbutils
       xorg.xbacklight
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -104,6 +105,8 @@ in
     bat = {
       enable = true;
     };
+    ripgrep.enable = true;
+    fd.enable = true;
     alacritty = {
       enable = true;
       settings = {
