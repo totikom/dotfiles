@@ -9,6 +9,10 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs"; # Use system packages list where available
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -16,6 +20,7 @@
       self,
       nixpkgs,
       home-manager,
+      disko,
     }:
     let
       system = "x86_64-linux";
@@ -23,6 +28,7 @@
     {
       nixosConfigurations.ThinkPadT490s = nixpkgs.lib.nixosSystem {
         modules = [
+          disko.nixosModules.disko
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {

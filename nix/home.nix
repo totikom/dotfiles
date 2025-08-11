@@ -364,17 +364,6 @@ in
     extraConfig = "set $system_mode System (l) logout, (s) suspend, (r) reboot, (Shift+s) shutdown";
   };
 
-  services.betterlockscreen = {
-    enable = true;
-    arguments = [
-      "dim"
-      "-u"
-      "/home/eugene/Repo/personal/dotfiles/i3/lock_screen.jpg"
-      "--off"
-      "30"
-    ];
-  };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

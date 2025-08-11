@@ -24,58 +24,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/68851867-a487-44d1-b0c8-96f6bcc29158";
-    fsType = "btrfs";
-    options = [
-      "subvol=root"
-      "compress=zstd"
-    ];
-  };
-
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/68851867-a487-44d1-b0c8-96f6bcc29158";
-    fsType = "btrfs";
-    options = [
-      "subvol=nix"
-      "compress=zstd"
-      "noatime"
-    ];
-  };
-
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/68851867-a487-44d1-b0c8-96f6bcc29158";
-    fsType = "btrfs";
-    options = [
-      "subvol=home"
-      "compress=zstd"
-    ];
-  };
-
-  fileSystems."/home/.unbacked_files" = {
-    device = "/dev/disk/by-uuid/68851867-a487-44d1-b0c8-96f6bcc29158";
-    fsType = "btrfs";
-    options = [
-      "subvol=unbacked_files"
-      "compress=zstd"
-    ];
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/FD4F-1322";
-    fsType = "vfat";
-    options = [
-      "fmask=0022"
-      "dmask=0022"
-    ];
-  };
-
-  fileSystems."/swap" = {
-    device = "/dev/disk/by-uuid/68851867-a487-44d1-b0c8-96f6bcc29158";
-    fsType = "btrfs";
-    options = [ "subvol=swap" ];
-  };
-
   swapDevices = [ { device = "/swap/swapfile"; } ];
 
   services.btrfs.autoScrub = {
