@@ -363,6 +363,13 @@ in
     };
     extraConfig = "set $system_mode System (l) logout, (s) suspend, (r) reboot, (Shift+s) shutdown";
   };
+  services = {
+    syncthing = {
+      enable = true;
+      overrideFolders = false;
+      overrideDevices = false;
+    };
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
