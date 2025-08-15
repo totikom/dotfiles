@@ -26,6 +26,7 @@ in
     # The home.packages option allows you to install Nix packages into your
     # environment.
     packages = with pkgs; [
+      cryfs
       dotter
       eza
       firefox
@@ -189,6 +190,19 @@ in
           \"Rust Embedded
           map ,e :w<CR>:Cargo embed<CR>
           ";
+    };
+    keepassxc = {
+      enable = true;
+      settings = {
+        Browser.Enabled = true;
+        GUI = {
+          ApplicationTheme = "dark";
+        };
+        Security = {
+          LockDatabaseIdle = true;
+          LockDatabaseIdleSeconds = 300;
+        };
+      };
     };
     zsh = {
       enable = true;
