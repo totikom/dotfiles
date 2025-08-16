@@ -271,6 +271,14 @@ in
               block = "net";
               format = " $icon {$signal_strength $ssid |}";
               format_alt = " $icon ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K) ";
+              theme_overrides = {
+                idle_fg = {
+                  link = "good_fg";
+                };
+                idle_bg = {
+                  link = "good_bg";
+                };
+              };
             }
             {
               block = "vpn";
@@ -290,6 +298,14 @@ in
               warning = 30;
               critical = 10;
               empty_threshold = 1;
+              theme_overrides = {
+                idle_fg = {
+                  link = "good_fg";
+                };
+                idle_bg = {
+                  link = "good_bg";
+                };
+              };
             }
             {
               block = "time";
