@@ -31,12 +31,14 @@ in
       eza
       firefox
       htop
+      joplin-desktop
       ncdu
       neofetch
       nix-output-monitor
       nixfmt-rfc-style
       trashy
       usbutils
+      veracrypt
       xorg.xbacklight
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
