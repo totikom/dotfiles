@@ -75,7 +75,10 @@
     printing.enable = true;
 
     # Enable touchpad support (enabled default in most desktopManager).
-    libinput.enable = true;
+    libinput = {
+      enable = true;
+      touchpad.naturalScrolling = true;
+    };
 
     # Enable the OpenSSH daemon.
     openssh.enable = true;
