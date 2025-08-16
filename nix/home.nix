@@ -110,6 +110,11 @@ in
         font.size = 8.0;
       };
     };
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
     git = {
       enable = true;
       delta.enable = true;
