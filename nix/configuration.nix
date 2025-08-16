@@ -58,6 +58,7 @@
         ];
       };
 
+      # Configure keymap in X11
       xkb.layout = "us,ru";
       xkb.options = "grp:shift_caps_switch,grp_led:caps";
     };
@@ -82,9 +83,7 @@
 
     # Enable the OpenSSH daemon.
     openssh.enable = true;
-    # Configure keymap in X11
-    #services.xserver.xkb.layout = "us";
-    # services.xserver.xkb.options = "eurosign:e,caps:escape";
+
     auto-cpufreq.enable = true;
     auto-cpufreq.settings = {
       battery = {
