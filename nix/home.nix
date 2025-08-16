@@ -368,7 +368,7 @@ in
 
         "${mod}+Shift+e" = "mode \"$system_mode\"";
         "${mod}+Shift+x" =
-          "exec betterlockscreen -l dim --off 30 -u /home/eugene/Repo/personal/dotfiles/i3/lock_screen.jpg";
+          "exec betterlockscreen -l dim --off 30";
 
       };
       modes = {
@@ -405,6 +405,11 @@ in
       enable = true;
       overrideFolders = false;
       overrideDevices = false;
+    };
+    betterlockscreen = {
+      enable = true;
+      inactiveInterval = 10;
+      arguments = ["dim" "--off" "30"];
     };
   };
 
