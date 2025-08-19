@@ -347,6 +347,12 @@ in
         "XF86MonBrightnessDown" = "exec xbacklight -dec 5";
         "Shift+XF86MonBrightnessUp" = "exec xbacklight -inc 1";
         "Shift+XF86MonBrightnessDown" = "exec xbacklight -dec 1";
+
+        # Sound
+        "XF86AudioRaiseVolume" = "exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%+";
+        "XF86AudioLowerVolume" = "exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%-";
+        "XF86AudioMute" = "exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle";
+
         # Move focus
         "${mod}+z" = "exec firefox";
         "${mod}+h" = "focus left";

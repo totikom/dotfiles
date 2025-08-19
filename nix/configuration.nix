@@ -45,6 +45,7 @@
     font-awesome
   ];
 
+  security.rtkit.enable = true;
   # List services that you want to enable:
   services = {
     # Enable the X11 windowing system.
