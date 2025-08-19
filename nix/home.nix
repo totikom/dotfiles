@@ -228,6 +228,7 @@ in
         ignoreSpace = true;
       };
       historySubstringSearch.enable = true;
+      envExtra = (builtins.readFile ../zsh/mkdir_unbacked.sh);
     };
     zellij = {
       enable = true;
