@@ -46,6 +46,7 @@
   ];
 
   security.rtkit.enable = true;
+  security.sudo.extraConfig = "Defaults insults,pwfeedback";
   # List services that you want to enable:
   services = {
     # Enable the X11 windowing system.
