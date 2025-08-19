@@ -32,14 +32,18 @@ in
       firefox
       htop
       joplin-desktop
+      mullvad
       ncdu
       neofetch
       nix-output-monitor
       nixfmt-rfc-style
+      telegram-desktop
       trashy
       usbutils
       veracrypt
       xorg.xbacklight
+      yubikey-manager
+      yubioath-flutter
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
