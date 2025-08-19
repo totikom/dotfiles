@@ -32,11 +32,13 @@ in
       firefox
       htop
       joplin-desktop
+      mc
       mullvad
       ncdu
       neofetch
       nix-output-monitor
       nixfmt-rfc-style
+      ranger
       telegram-desktop
       trashy
       usbutils
@@ -44,6 +46,7 @@ in
       xorg.xbacklight
       yubikey-manager
       yubioath-flutter
+      zathura
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
@@ -358,8 +361,11 @@ in
         "XF86AudioLowerVolume" = "exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 10%-";
         "XF86AudioMute" = "exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle";
 
-        # Move focus
+        # Apps
         "${mod}+z" = "exec firefox";
+        "${mod}+x" = "exec alacritty --command ranger";
+
+        # Move focus
         "${mod}+h" = "focus left";
         "${mod}+j" = "focus down";
         "${mod}+k" = "focus up";
