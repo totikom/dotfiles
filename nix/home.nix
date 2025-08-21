@@ -32,6 +32,7 @@ in
       firefox
       htop
       joplin-desktop
+      maim
       mc
       mullvad
       ncdu
@@ -43,6 +44,8 @@ in
       trashy
       usbutils
       veracrypt
+      xclip
+      xdotool
       xorg.xbacklight
       yubikey-manager
       yubioath-flutter
@@ -386,6 +389,16 @@ in
         "${mod}+Shift+e" = "mode \"$system_mode\"";
         "${mod}+Shift+x" =
           "exec betterlockscreen -l dim --off 30";
+
+        # Screenshots
+        "Print" = ''exec --no-startup-id maim "/home/$USER/Pictures/$(date)"'';
+        "${mod}+Print" = ''exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"'';
+        "Shift+Print" = ''exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"'';
+
+        # Clipboard Screenshots
+        "Ctrl+Print" = ''exec --no-startup-id maim | xclip -selection clipboard -t image/png'';
+        "Ctrl+${mod}+Print" = ''exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png'';
+        "Ctrl+Shift+Print" = ''exec --no-startup-id maim --select | xclip -selection clipboard -t image/png'';
 
       };
       modes = {
