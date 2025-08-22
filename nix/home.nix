@@ -144,6 +144,10 @@ in
         merge.tool = "vimdiff";
       };
     };
+    gh = {
+      enable = true;
+      settings.git_protocol = "ssh";
+    };
     vim = {
       enable = true;
       defaultEditor = true;
