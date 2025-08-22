@@ -30,6 +30,7 @@ in
       dotter
       eza
       firefox
+      gcc
       htop
       joplin-desktop
       maim
@@ -40,6 +41,7 @@ in
       nix-output-monitor
       nixfmt-rfc-style
       ranger
+      rustup
       telegram-desktop
       trashy
       usbutils
