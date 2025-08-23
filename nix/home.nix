@@ -26,6 +26,7 @@ in
     # The home.packages option allows you to install Nix packages into your
     # environment.
     packages = with pkgs; [
+      age
       cryfs
       dotter
       eza
@@ -42,6 +43,7 @@ in
       nixfmt-rfc-style
       ranger
       rustup
+      sops
       telegram-desktop
       trashy
       usbutils
