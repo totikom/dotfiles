@@ -128,6 +128,16 @@
         };
       };
     };
+    yggdrasil = {
+      enable = true;
+      configFile = config.sops.secrets.yggdrasil_config.path;
+      settings = {
+        Peers = [
+          tcp://37.186.113.100:1514
+          wss://ygg-evn-1.wgos.org:443
+        ];
+      };
+    };
   };
   systemd.sleep.extraConfig = ''
     AllowSuspend=yes
@@ -180,6 +190,27 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
+  networking.firewall = {
+    enable = true;
+
+    # Only expose necessary external-facing ports
+    allowedTCPPorts = [
+      22 # SSH
+      80 # HTTP
+      443 # HTTPS
+      1514 # ygg
+    ];
+
+    # UDP ports for various services
+    allowedUDPPorts = [
+      80 # HTTP/3
+      443 # HTTP/3
+    ];
+
+    # Allow ping
+    allowPing = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   sops = {
@@ -204,6 +235,10 @@
         owner = config.users.users.eugene.name;
         mode = "0600";
         sopsFile = ../syncthing/thinkpadt490s/key.pem;
+      };
+      yggdrasil_config = {
+        format = "binary";
+        sopsFile = ../yggdrasil/yggdrasil.conf;
       };
     };
   };

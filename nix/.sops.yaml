@@ -12,3 +12,8 @@ creation_rules:
     - age:
       - *admin_thinkpadt490s
       - *server_thinkpadt490s
+  - path_regex: yggdrasil.conf
+    key_groups:
+    - age:
+      - *admin_thinkpadt490s
+      - *server_thinkpadt490s
