@@ -445,11 +445,6 @@ in
     extraConfig = "set $system_mode System (l) logout, (s) suspend, (r) reboot, (Shift+s) shutdown";
   };
   services = {
-    syncthing = {
-      enable = true;
-      overrideFolders = false;
-      overrideDevices = false;
-    };
     betterlockscreen = {
       enable = true;
       inactiveInterval = 10;

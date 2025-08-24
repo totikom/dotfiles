@@ -97,6 +97,37 @@
         turbo = "auto";
       };
     };
+
+    syncthing = {
+      enable = true;
+      openDefaultPorts = true;
+      overrideFolders = true;
+      user = "eugene";
+      dataDir = "/home/eugene";
+      overrideDevices = true;
+      cert = config.sops.secrets."syncthing/thinkpadt490s/cert.pem".path;
+      key = config.sops.secrets."syncthing/thinkpadt490s/key.pem".path;
+      extraFlags = [ "--no-default-folder" ]; # Don't create default ~/Sync folder
+      settings = {
+        devices = {
+          "Redmi K80 Pro" = {id = "7KDCBRR-3VGLY3C-QZ2T6TL-2FC76U6-3AEEEXQ-JHTYWCP-D6LFWBU-7OTWCAR";};
+          "ThinkPad" = {id = "I3NH3E2-RTOWUQI-RYIRCVC-WOHX2GJ-V6TOFTD-BGOWB22-B5E67VQ-77DHHQA";};
+        };
+        folders = {
+          "tab.digital" = {
+            label = "tab.digital";
+            id = "ego4c-ckkzv";
+            path = "~/Documents/tab.digital";
+            devices = ["Redmi K80 Pro" "ThinkPad"];
+          };
+          "Documents" = {
+            id = "fp5rw-7j1x3";
+            path="~/Documents/Phone";
+            devices = ["Redmi K80 Pro" "ThinkPad"];
+          };
+        };
+      };
+    };
   };
   systemd.sleep.extraConfig = ''
     AllowSuspend=yes
@@ -160,6 +191,22 @@
 
     # This will automatically import SSH keys as age keys
     age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+
+    # This is the actual specification of the secrets.
+    secrets = {
+      "syncthing/thinkpadt490s/cert.pem" = {
+        format = "binary";
+        owner = config.users.users.eugene.name;
+        mode = "0600";
+        sopsFile = ../syncthing/thinkpadt490s/cert.pem;
+      };
+      "syncthing/thinkpadt490s/key.pem" = {
+        format = "binary";
+        owner = config.users.users.eugene.name;
+        mode = "0600";
+        sopsFile = ../syncthing/thinkpadt490s/key.pem;
+      };
+    };
   };
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
