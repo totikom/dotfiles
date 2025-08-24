@@ -27,6 +27,7 @@ in
     # environment.
     packages = with pkgs; [
       age
+      bluetui
       cryfs
       dotter
       eza
