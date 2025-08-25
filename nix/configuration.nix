@@ -84,7 +84,16 @@
     };
 
     # Enable the OpenSSH daemon.
-    openssh.enable = true;
+   openssh = {
+    enable = true;
+    settings = {
+      AllowUsers = [ "eugene" ];
+      KbdInteractiveAuthentication = false;
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+      #ports = [ 55060 ];
+    };
+  };
 
     auto-cpufreq.enable = true;
     auto-cpufreq.settings = {
@@ -151,6 +160,7 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    #openssh.authorizedKeys.keyFiles = [];
   };
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
@@ -195,7 +205,6 @@
 
     # Only expose necessary external-facing ports
     allowedTCPPorts = [
-      22 # SSH
       80 # HTTP
       443 # HTTPS
       1514 # ygg
