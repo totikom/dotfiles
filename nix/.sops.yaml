@@ -2,17 +2,7 @@ keys:
   - &admin_thinkpadt490s age17d2z9ywsykrrt7pc58lcg9xrz932ezy3g9lwf7ldy8kkl74tq9cqwech63
   - &server_thinkpadt490s age1tyyqpj4yj7uedyfq6cf66ws39x3sax9rwz4c2kvkfmft7af499cq4aam37
 creation_rules:
-  - path_regex: syncthing/[^/]+\.pem$
-    key_groups:
-    - age:
-      - *admin_thinkpadt490s
-      - *server_thinkpadt490s
-  - path_regex: secrets.json
-    key_groups:
-    - age:
-      - *admin_thinkpadt490s
-      - *server_thinkpadt490s
-  - path_regex: yggdrasil.conf
+  - path_regex: .+\.(pem|json|conf)$
     key_groups:
     - age:
       - *admin_thinkpadt490s

@@ -84,16 +84,16 @@
     };
 
     # Enable the OpenSSH daemon.
-   openssh = {
-    enable = true;
-    settings = {
-      AllowUsers = [ "eugene" ];
-      KbdInteractiveAuthentication = false;
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-      #ports = [ 55060 ];
+    openssh = {
+      enable = true;
+      settings = {
+        AllowUsers = [ "eugene" ];
+        KbdInteractiveAuthentication = false;
+        PasswordAuthentication = false;
+        PermitRootLogin = "no";
+        #ports = [ 55060 ];
+      };
     };
-  };
 
     auto-cpufreq.enable = true;
     auto-cpufreq.settings = {
@@ -119,20 +119,30 @@
       extraFlags = [ "--no-default-folder" ]; # Don't create default ~/Sync folder
       settings = {
         devices = {
-          "Redmi K80 Pro" = {id = "7KDCBRR-3VGLY3C-QZ2T6TL-2FC76U6-3AEEEXQ-JHTYWCP-D6LFWBU-7OTWCAR";};
-          "ThinkPad" = {id = "I3NH3E2-RTOWUQI-RYIRCVC-WOHX2GJ-V6TOFTD-BGOWB22-B5E67VQ-77DHHQA";};
+          "Redmi K80 Pro" = {
+            id = "7KDCBRR-3VGLY3C-QZ2T6TL-2FC76U6-3AEEEXQ-JHTYWCP-D6LFWBU-7OTWCAR";
+          };
+          "ThinkPad" = {
+            id = "I3NH3E2-RTOWUQI-RYIRCVC-WOHX2GJ-V6TOFTD-BGOWB22-B5E67VQ-77DHHQA";
+          };
         };
         folders = {
           "tab.digital" = {
             label = "tab.digital";
             id = "ego4c-ckkzv";
             path = "~/Documents/tab.digital";
-            devices = ["Redmi K80 Pro" "ThinkPad"];
+            devices = [
+              "Redmi K80 Pro"
+              "ThinkPad"
+            ];
           };
           "Documents" = {
             id = "fp5rw-7j1x3";
-            path="~/Documents/Phone";
-            devices = ["Redmi K80 Pro" "ThinkPad"];
+            path = "~/Documents/Phone";
+            devices = [
+              "Redmi K80 Pro"
+              "ThinkPad"
+            ];
           };
         };
       };
@@ -142,8 +152,8 @@
       configFile = config.sops.secrets.yggdrasil_config.path;
       settings = {
         Peers = [
-          tcp://37.186.113.100:1514
-          wss://ygg-evn-1.wgos.org:443
+          "tcp://37.186.113.100:1514"
+          "wss://ygg-evn-1.wgos.org:443"
         ];
       };
     };
