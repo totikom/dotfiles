@@ -168,6 +168,28 @@
         ];
       };
     };
+
+    snapper = {
+      snapshotInterval = "hourly";
+      persistentTimer = true;
+      cleanupInterval = "1d";
+      configs = {
+        home = {
+          FSTYPE = "btrfs";
+          SUBVOLUME = "/home";
+          SPACE_LIMIT="0.5";
+          FREE_LIMIT="0.2";
+          TIMELINE_CREATE = true;
+          TIMELINE_CLEANUP = true;
+          TIMELINE_MIN_AGE="1800";
+          TIMELINE_LIMIT_HOURLY="1";
+          TIMELINE_LIMIT_DAILY="7";
+          TIMELINE_LIMIT_WEEKLY="8";
+          TIMELINE_LIMIT_MONTHLY="4";
+          TIMELINE_LIMIT_YEARLY="0";
+        };
+      };
+    };
   };
   systemd.sleep.extraConfig = ''
     AllowSuspend=yes
