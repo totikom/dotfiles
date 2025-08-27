@@ -85,6 +85,7 @@
       enable = true;
       pulse.enable = true;
     };
+
     # Enable CUPS to print documents.
     printing.enable = true;
 
@@ -102,8 +103,8 @@
         KbdInteractiveAuthentication = false;
         PasswordAuthentication = false;
         PermitRootLogin = "no";
-        #ports = [ 55060 ];
       };
+      ports = [ 55060 ];
     };
 
     auto-cpufreq.enable = true;
@@ -158,6 +159,7 @@
         };
       };
     };
+
     yggdrasil = {
       enable = true;
       configFile = config.sops.secrets.yggdrasil_config.path;
