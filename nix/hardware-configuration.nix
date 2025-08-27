@@ -47,7 +47,10 @@
       spec = "/";
       hashTableSizeMB = 1024;
       verbosity = "info";
-      extraOptions = [ "--loadavg-target" "1.0" ];
+      extraOptions = [
+        "--loadavg-target"
+        "1.0"
+      ];
     };
   };
 
