@@ -46,7 +46,20 @@
   ];
 
   security.rtkit.enable = true;
-  security.sudo.extraConfig = "Defaults insults,pwfeedback";
+  security.sudo = {
+    enable = true;
+    extraConfig = "Defaults insults,pwfeedback";
+    extraRules = [{
+      commands = [
+        {
+          command = "${pkgs.networkmanager}/bin/nmtui";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+      groups = [ "wheel" ];
+    }];
+  };
+
   # List services that you want to enable:
   services = {
     # Enable the X11 windowing system.
