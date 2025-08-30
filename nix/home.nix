@@ -38,7 +38,6 @@ in
       localsend
       maim
       mc
-      mullvad
       ncdu
       neofetch
       nix-output-monitor
