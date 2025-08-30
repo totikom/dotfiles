@@ -35,6 +35,7 @@ in
       gcc
       htop
       joplin-desktop
+      localsend
       maim
       mc
       mullvad
@@ -49,6 +50,7 @@ in
       trashy
       usbutils
       veracrypt
+      wifi-qr
       xclip
       xdotool
       xorg.xbacklight

@@ -253,6 +253,7 @@
       80 # HTTP
       443 # HTTPS
       1514 # ygg
+      53317 # Local Send
     ];
 
     # UDP ports for various services
