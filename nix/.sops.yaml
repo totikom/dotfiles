@@ -7,3 +7,8 @@ creation_rules:
     - age:
       - *admin_thinkpadt490s
       - *server_thinkpadt490s
+  - path_regex: .+\.nmconnection$
+    key_groups:
+    - age:
+      - *admin_thinkpadt490s
+      - *server_thinkpadt490s

@@ -179,16 +179,16 @@
         home = {
           FSTYPE = "btrfs";
           SUBVOLUME = "/home";
-          SPACE_LIMIT="0.5";
-          FREE_LIMIT="0.2";
+          SPACE_LIMIT = "0.5";
+          FREE_LIMIT = "0.2";
           TIMELINE_CREATE = true;
           TIMELINE_CLEANUP = true;
-          TIMELINE_MIN_AGE="1800";
-          TIMELINE_LIMIT_HOURLY="1";
-          TIMELINE_LIMIT_DAILY="7";
-          TIMELINE_LIMIT_WEEKLY="8";
-          TIMELINE_LIMIT_MONTHLY="4";
-          TIMELINE_LIMIT_YEARLY="0";
+          TIMELINE_MIN_AGE = "1800";
+          TIMELINE_LIMIT_HOURLY = "1";
+          TIMELINE_LIMIT_DAILY = "7";
+          TIMELINE_LIMIT_WEEKLY = "8";
+          TIMELINE_LIMIT_MONTHLY = "4";
+          TIMELINE_LIMIT_YEARLY = "0";
         };
       };
     };
@@ -268,35 +268,46 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  sops = {
-    # This will add secrets.yml to the nix store
-    # You can avoid this by adding a string to the full path instead, i.e.
-    # sops.defaultSopsFile = "/root/.sops/secrets/example.yaml";
-    defaultSopsFile = ./secrets.json;
+  sops =
+    let
+      wifi_generator = name: value: {
+        format = "binary";
+        path = "/etc/NetworkManager/system-connections/${name}";
+        restartUnits = [ "NetworkManager.service" ];
+        sopsFile = ../wifis/${name};
+      };
+      generated_secrets = builtins.mapAttrs (wifi_generator) (builtins.readDir (../wifis));
+      hand_written_secrets = {
+        "syncthing/thinkpadt490s/cert.pem" = {
+          format = "binary";
+          owner = config.users.users.eugene.name;
+          mode = "0600";
+          sopsFile = ../syncthing/thinkpadt490s/cert.pem;
+        };
+        "syncthing/thinkpadt490s/key.pem" = {
+          format = "binary";
+          owner = config.users.users.eugene.name;
+          mode = "0600";
+          sopsFile = ../syncthing/thinkpadt490s/key.pem;
+        };
+        yggdrasil_config = {
+          format = "binary";
+          sopsFile = ../yggdrasil/yggdrasil.conf;
+        };
+      };
+    in
+    {
+      # This will add secrets.yml to the nix store
+      # You can avoid this by adding a string to the full path instead, i.e.
+      # sops.defaultSopsFile = "/root/.sops/secrets/example.yaml";
+      defaultSopsFile = ./secrets.json;
 
-    # This will automatically import SSH keys as age keys
-    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+      # This will automatically import SSH keys as age keys
+      age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
-    # This is the actual specification of the secrets.
-    secrets = {
-      "syncthing/thinkpadt490s/cert.pem" = {
-        format = "binary";
-        owner = config.users.users.eugene.name;
-        mode = "0600";
-        sopsFile = ../syncthing/thinkpadt490s/cert.pem;
-      };
-      "syncthing/thinkpadt490s/key.pem" = {
-        format = "binary";
-        owner = config.users.users.eugene.name;
-        mode = "0600";
-        sopsFile = ../syncthing/thinkpadt490s/key.pem;
-      };
-      yggdrasil_config = {
-        format = "binary";
-        sopsFile = ../yggdrasil/yggdrasil.conf;
-      };
+      # This is the actual specification of the secrets.
+      secrets = hand_written_secrets // generated_secrets;
     };
-  };
 
   hardware.bluetooth = {
     enable = true;
