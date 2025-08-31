@@ -34,6 +34,7 @@
       nixosConfigurations.ThinkPadT490s = nixpkgs.lib.nixosSystem {
         modules = [
           disko.nixosModules.disko
+          ./disko/ThinkPadT490s.nix
           ./nix/configuration.nix
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
