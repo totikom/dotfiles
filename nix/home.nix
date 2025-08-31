@@ -42,7 +42,6 @@ in
       neofetch
       nix-output-monitor
       nixfmt-rfc-style
-      ranger
       rustup
       sops
       telegram-desktop
@@ -346,6 +345,10 @@ in
       enable = true;
       terminal = "${pkgs.alacritty}/bin/alacritty";
     };
+    yazi = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
   xsession.windowManager.i3 = {
     enable = true;
@@ -378,7 +381,7 @@ in
 
         # Apps
         "${mod}+z" = "exec firefox";
-        "${mod}+x" = "exec alacritty --command ranger";
+        "${mod}+x" = "exec alacritty --command yazi";
 
         # Move focus
         "${mod}+h" = "focus left";
