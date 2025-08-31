@@ -165,8 +165,13 @@
       configFile = config.sops.secrets.yggdrasil_config.path;
       settings = {
         Peers = [
-          "tcp://37.186.113.100:1514"
-          "wss://ygg-evn-1.wgos.org:443"
+          "tcp://srv.itrus.su:7991"
+          "tcp://ip4.01.msk.ru.dioni.su:9002"
+          "quic://ip4.01.msk.ru.dioni.su:9002"
+          "tcp://s-mow-0.sergeysedoy97.ru:65533"
+          "tcp://s-mow-1.sergeysedoy97.ru:65533"
+          "tcp://x-mow-1.sergeysedoy97.ru:65533"
+          "tls://[2a09:5302:ffff::992]:443"
         ];
       };
     };
@@ -245,6 +250,21 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
+  networking.nftables = {
+    enable = true;
+    tables = {
+      # Allow yggdrasil to be routed outside of mullvad
+      allowYggdrasil = {
+        content = ''
+          chain excludeOutgoing {
+            type route hook output priority -1; policy accept;
+            ip6 daddr 200::/7 ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
+          }
+        '';
+        family = "inet";
+      };
+    };
+  };
   networking.firewall = {
     enable = true;
 
@@ -252,14 +272,21 @@
     allowedTCPPorts = [
       80 # HTTP
       443 # HTTPS
-      1514 # ygg
       53317 # Local Send
+      # ygg ports
+      7991
+      9002
+      65533
     ];
 
     # UDP ports for various services
     allowedUDPPorts = [
       80 # HTTP/3
       443 # HTTP/3
+      # ygg ports
+      7991
+      9002
+      65533
     ];
 
     # Allow ping
