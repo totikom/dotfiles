@@ -35,10 +35,11 @@
         modules = [
           disko.nixosModules.disko
           ./disko/ThinkPadT490s.nix
-          ./nix/configuration.nix
+          ./nix/common.nix
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
+            networking.hostName = "ThinkPadT490s"; # Define your hostname.
             home-manager = {
               extraSpecialArgs = { inherit inputs; };
               useGlobalPkgs = true;
