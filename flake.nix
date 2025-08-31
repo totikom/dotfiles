@@ -34,7 +34,7 @@
       nixosConfigurations.ThinkPadT490s = nixpkgs.lib.nixosSystem {
         modules = [
           disko.nixosModules.disko
-          ./configuration.nix
+          ./nix/configuration.nix
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
@@ -43,7 +43,7 @@
               useGlobalPkgs = true;
               users.eugene = {
                 imports = [
-                  ./home.nix
+                  ./nix/home.nix
                 ];
               };
             };
