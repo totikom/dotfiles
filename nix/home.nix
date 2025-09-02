@@ -244,6 +244,12 @@ in
         ignoreSpace = true;
       };
       historySubstringSearch.enable = true;
+      completionInit = ''
+        autoload -U compinit && compinit
+        ## case insensitive path-completion
+        zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+        zstyle ':completion:*' menu select
+        '';
       envExtra = (builtins.readFile ../zsh/mkdir_unbacked.sh);
     };
     zellij = {
