@@ -118,6 +118,7 @@ in
     bat.enable = true;
     fd.enable = true;
     gitui.enable = true;
+    mpv.enable = true;
     ripgrep.enable = true;
     tealdeer.enable = true;
     zoxide.enable = true;
@@ -354,6 +355,15 @@ in
     yazi = {
       enable = true;
       enableZshIntegration = true;
+      settings = {
+        sort_by = "natural";
+        sort_sensitive = true;
+        sort_reverse = false;
+        sort_dir_first = true;
+        linemode = "none";
+        show_hidden = true;
+        show_symlink = true;
+      };
     };
   };
   xsession.windowManager.i3 = {
