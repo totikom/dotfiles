@@ -137,6 +137,9 @@
           "ThinkPad" = {
             id = "I3NH3E2-RTOWUQI-RYIRCVC-WOHX2GJ-V6TOFTD-BGOWB22-B5E67VQ-77DHHQA";
           };
+          "Main-pc" = {
+            id = "34EFVRV-MRV5SDY-TGYZAM2-J6OJECF-PBMEBV2-TX2CUKN-RACKTV2-CDUK5Q4";
+          };
         };
         folders = {
           "tab.digital" = {
@@ -144,6 +147,7 @@
             id = "ego4c-ckkzv";
             path = "~/Documents/tab.digital";
             devices = [
+              "Main-pc"
               "Redmi K80 Pro"
               "ThinkPad"
             ];
@@ -152,6 +156,7 @@
             id = "fp5rw-7j1x3";
             path = "~/Documents/Phone";
             devices = [
+              "Main-pc"
               "Redmi K80 Pro"
               "ThinkPad"
             ];
