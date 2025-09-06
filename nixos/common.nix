@@ -225,17 +225,17 @@
       };
       generated_secrets = builtins.mapAttrs (wifi_generator) (builtins.readDir (../wifis));
       hand_written_secrets = {
-        "syncthing/thinkpadt490s/cert.pem" = {
+        "syncthing/ThinkPadT490s/cert.pem" = {
           format = "binary";
           owner = config.users.users.eugene.name;
           mode = "0600";
-          sopsFile = ../syncthing/thinkpadt490s/cert.pem;
+          sopsFile = ../syncthing/ThinkPadT490s/cert.pem;
         };
-        "syncthing/thinkpadt490s/key.pem" = {
+        "syncthing/ThinkPadT490s/key.pem" = {
           format = "binary";
           owner = config.users.users.eugene.name;
           mode = "0600";
-          sopsFile = ../syncthing/thinkpadt490s/key.pem;
+          sopsFile = ../syncthing/ThinkPadT490s/key.pem;
         };
         yggdrasil_config = {
           format = "binary";

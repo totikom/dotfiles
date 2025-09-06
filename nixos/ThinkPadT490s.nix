@@ -26,8 +26,8 @@
       user = "eugene";
       dataDir = "/home/eugene";
       overrideDevices = true;
-      cert = config.sops.secrets."syncthing/thinkpadt490s/cert.pem".path;
-      key = config.sops.secrets."syncthing/thinkpadt490s/key.pem".path;
+      cert = config.sops.secrets."syncthing/ThinkPadT490s/cert.pem".path;
+      key = config.sops.secrets."syncthing/ThinkPadT490s/key.pem".path;
       extraFlags = [ "--no-default-folder" ]; # Don't create default ~/Sync folder
       settings = {
         devices = {
