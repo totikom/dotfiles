@@ -36,6 +36,7 @@
           disko.nixosModules.disko
           ./disko/ThinkPadT490s.nix
           ./nixos/common.nix
+          ./nixos/ThinkPadT490s.nix
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
