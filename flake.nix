@@ -31,27 +31,51 @@
       system = "x86_64-linux";
     in
     {
-      nixosConfigurations.ThinkPadT490s = nixpkgs.lib.nixosSystem {
-        modules = [
-          disko.nixosModules.disko
-          ./disko/ThinkPadT490s.nix
-          ./nixos/common.nix
-          ./nixos/ThinkPadT490s.nix
-          sops-nix.nixosModules.sops
-          home-manager.nixosModules.home-manager
-          {
-            networking.hostName = "ThinkPadT490s"; # Define your hostname.
-            home-manager = {
-              extraSpecialArgs = { inherit inputs; };
-              useGlobalPkgs = true;
-              users.eugene = {
-                imports = [
-                  ./home/common.nix
-                ];
+      nixosConfigurations = {
+        ThinkPadT490s = nixpkgs.lib.nixosSystem {
+          modules = [
+            disko.nixosModules.disko
+            ./disko/ThinkPadT490s.nix
+            ./nixos/common.nix
+            ./nixos/ThinkPadT490s.nix
+            sops-nix.nixosModules.sops
+            home-manager.nixosModules.home-manager
+            {
+              networking.hostName = "ThinkPadT490s"; # Define your hostname.
+              home-manager = {
+                extraSpecialArgs = { inherit inputs; };
+                useGlobalPkgs = true;
+                users.eugene = {
+                  imports = [
+                    ./home/common.nix
+                  ];
+                };
               };
-            };
-          }
-        ];
+            }
+          ];
+        };
+        Main-pc = nixpkgs.lib.nixosSystem {
+          modules = [
+            disko.nixosModules.disko
+            ./disko/Main-pc.nix
+            ./nixos/common.nix
+            ./nixos/Main-pc.nix
+            sops-nix.nixosModules.sops
+            home-manager.nixosModules.home-manager
+            {
+              networking.hostName = "Main-pc"; # Define your hostname.
+              home-manager = {
+                extraSpecialArgs = { inherit inputs; };
+                useGlobalPkgs = true;
+                users.eugene = {
+                  imports = [
+                    ./home/common.nix
+                  ];
+                };
+              };
+            }
+          ];
+        };
       };
     };
 }

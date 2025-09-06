@@ -111,4 +111,3 @@
   #AllowHybridSleep=no
   #AllowSuspendThenHibernate=no
 }
-
