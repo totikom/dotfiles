@@ -35,7 +35,7 @@
         modules = [
           disko.nixosModules.disko
           ./disko/ThinkPadT490s.nix
-          ./nix/common.nix
+          ./nixos/common.nix
           sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager
           {
@@ -45,7 +45,7 @@
               useGlobalPkgs = true;
               users.eugene = {
                 imports = [
-                  ./nix/home.nix
+                  ./home/common.nix
                 ];
               };
             };
