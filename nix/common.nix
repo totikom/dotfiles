@@ -27,7 +27,24 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocales = [ "ru_RU.UTF-8/UTF-8" ];
+    extraLocaleSettings = {
+      LC_CTYPE = "en_US.UTF8";
+      LC_ADDRESS = "ru_RU.UTF-8";
+      LC_MEASUREMENT = "ru_RU.UTF-8";
+      LC_MESSAGES = "en_US.UTF-8";
+      LC_MONETARY = "ru_RU.UTF-8";
+      LC_NAME = "ru_RU.UTF-8";
+      LC_NUMERIC = "ru_RU.UTF-8";
+      LC_PAPER = "ru_RU.UTF-8";
+      LC_TELEPHONE = "ru_RU.UTF-8";
+      LC_TIME = "ru_RU.UTF-8";
+      LC_COLLATE = "ru_RU.UTF-8";
+    };
+
+  };
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";

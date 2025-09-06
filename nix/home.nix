@@ -35,14 +35,17 @@ in
       gcc
       htop
       joplin-desktop
+      kmymoney
       localsend
       maim
       mc
+      mmex
       ncdu
       neofetch
       nix-output-monitor
       nixfmt-rfc-style
       rustup
+      signal-desktop
       sops
       telegram-desktop
       trashy
@@ -250,7 +253,7 @@ in
         ## case insensitive path-completion
         zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
         zstyle ':completion:*' menu select
-        '';
+      '';
       envExtra = (builtins.readFile ../zsh/mkdir_unbacked.sh);
     };
     zellij = {
