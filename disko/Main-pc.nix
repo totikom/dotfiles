@@ -3,7 +3,7 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/nvme0n1";
+        device = "/dev/sda";
         content = {
           type = "gpt";
           partitions = {
@@ -21,7 +21,7 @@
               size = "100%";
               content = {
                 type = "luks";
-                name = "crypted";
+                name = "encrypted_root";
                 passwordFile = "/tmp/secret.key"; # Interactive
                 settings.allowDiscards = true;
                 content = {
@@ -68,7 +68,7 @@
       };
       media = {
         type = "disk";
-        device = "/dev/sda";
+        device = "/dev/sdb";
         content = {
           type = "gpt";
           partitions = {
@@ -76,8 +76,8 @@
               size = "100%";
               content = {
                 type = "luks";
-                name = "crypted";
-                passwordFile = "/tmp/secret2.key"; # Interactive
+                name = "encrypted_media";
+                passwordFile = "/tmp/secret.key"; # Interactive
                 settings.allowDiscards = true;
                 content = {
                   type = "btrfs";
