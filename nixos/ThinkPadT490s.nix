@@ -67,7 +67,7 @@
 
     yggdrasil = {
       enable = true;
-      configFile = config.sops.secrets.yggdrasil_config.path;
+      configFile = config.sops.secrets."yggdrasil/ThinkPadT490s/conf".path;
       settings = {
         Peers = [
           "tcp://srv.itrus.su:7991"
@@ -125,9 +125,9 @@
           mode = "0600";
           sopsFile = ../syncthing/ThinkPadT490s/key.pem;
         };
-        yggdrasil_config = {
+        "yggdrasil/ThinkPadT490s/conf" = {
           format = "binary";
-          sopsFile = ../yggdrasil/yggdrasil.conf;
+          sopsFile = ../yggdrasil/ThinkPadT490s/yggdrasil.conf;
         };
       };
     in
