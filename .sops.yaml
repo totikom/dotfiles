@@ -1,14 +1,21 @@
 keys:
   - &admin_thinkpadt490s age17d2z9ywsykrrt7pc58lcg9xrz932ezy3g9lwf7ldy8kkl74tq9cqwech63
   - &server_thinkpadt490s age1tyyqpj4yj7uedyfq6cf66ws39x3sax9rwz4c2kvkfmft7af499cq4aam37
+  - &server_main_pc age16m8d7shcppsdqs7c48zfwjagkqrv3ks9zjwgft4xfd6fg4h5f9fq4p3eaf
 creation_rules:
-  - path_regex: .+\.(pem|json|conf)$
+  - path_regex: .+/Main-pc/.+\.(pem|json|conf|nmconnection)$
+    key_groups:
+    - age:
+      - *admin_thinkpadt490s
+      - *server_main_pc
+  - path_regex: .+/ThinkPadT490s/.+\.(pem|json|conf|nmconnection)$
     key_groups:
     - age:
       - *admin_thinkpadt490s
       - *server_thinkpadt490s
-  - path_regex: .+\.nmconnection$
+  - path_regex: .+\.(pem|json|conf|nmconnection)$
     key_groups:
     - age:
       - *admin_thinkpadt490s
       - *server_thinkpadt490s
+      - *server_main_pc
