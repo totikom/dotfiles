@@ -72,6 +72,7 @@
                 users.eugene = {
                   imports = [
                     ./home/common.nix
+                    ./home/Main-pc.nix
                   ];
                 };
               };
