@@ -36,6 +36,7 @@
           modules = [
             disko.nixosModules.disko
             ./disko/ThinkPadT490s.nix
+            ./nixos/hardware-configuration.nix
             ./nixos/common.nix
             ./nixos/ThinkPadT490s.nix
             sops-nix.nixosModules.sops
@@ -58,6 +59,7 @@
           modules = [
             disko.nixosModules.disko
             ./disko/Main-pc.nix
+            ./nixos/hardware-configuration_other.nix
             ./nixos/common.nix
             ./nixos/Main-pc.nix
             sops-nix.nixosModules.sops

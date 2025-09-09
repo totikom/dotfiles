@@ -103,6 +103,46 @@
       };
     };
   };
+  sops =
+    let
+      wifi_generator = name: value: {
+        format = "binary";
+        path = "/etc/NetworkManager/system-connections/${name}";
+        restartUnits = [ "NetworkManager.service" ];
+        sopsFile = ../wifis/${name};
+      };
+      generated_secrets = builtins.mapAttrs (wifi_generator) (builtins.readDir (../wifis));
+      hand_written_secrets = {
+        "syncthing/ThinkPadT490s/cert.pem" = {
+          format = "binary";
+          owner = config.users.users.eugene.name;
+          mode = "0600";
+          sopsFile = ../syncthing/ThinkPadT490s/cert.pem;
+        };
+        "syncthing/ThinkPadT490s/key.pem" = {
+          format = "binary";
+          owner = config.users.users.eugene.name;
+          mode = "0600";
+          sopsFile = ../syncthing/ThinkPadT490s/key.pem;
+        };
+        yggdrasil_config = {
+          format = "binary";
+          sopsFile = ../yggdrasil/yggdrasil.conf;
+        };
+      };
+    in
+    {
+      # This will add secrets.yml to the nix store
+      # You can avoid this by adding a string to the full path instead, i.e.
+      # sops.defaultSopsFile = "/root/.sops/secrets/example.yaml";
+      defaultSopsFile = ./secrets.json;
+
+      # This will automatically import SSH keys as age keys
+      age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+
+      # This is the actual specification of the secrets.
+      secrets = hand_written_secrets // generated_secrets;
+    };
 
   systemd.sleep.extraConfig = ''
     AllowSuspend=yes
