@@ -126,7 +126,10 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    #openssh.authorizedKeys.keyFiles = [];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBI3zcGyF5SimD6i8p5TS5WQJ25aOE6QI0SK90VyyK7r eugene@ThinkPadT490s"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIY6/YkxtBtCjA1aVaWzeDBRsXirlYiMjFf06N64udog eugene@Main-pc"
+    ];
   };
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
@@ -189,6 +192,7 @@
       80 # HTTP
       443 # HTTPS
       53317 # Local Send
+      55060 # ssh
       # ygg ports
       7991
       9002
@@ -199,6 +203,7 @@
     allowedUDPPorts = [
       80 # HTTP/3
       443 # HTTP/3
+      55060 # ssh
       # ygg ports
       7991
       9002
