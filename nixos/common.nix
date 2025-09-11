@@ -88,6 +88,8 @@
     };
     displayManager.defaultSession = "none+i3";
 
+    speechd.enable = false;
+
     pcscd.enable = true;
     # Enable sound.
     # hardware.pulseaudio.enable = true;
