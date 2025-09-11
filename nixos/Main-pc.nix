@@ -81,6 +81,20 @@
         ];
       };
     };
+    transmission = {
+      enable = true;
+      package = pkgs.transmission_4;
+      user = "eugene";
+      openFirewall = true;
+      settings = {
+        download-dir = "${config.users.users.eugene.home}/.junk";
+        incomplete-dir-enabled = false;
+        rename-partial-files = true;
+        trash-original-torrent-files = true;
+        watch-dir = "${config.users.users.eugene.home}/Downloads";
+        watch-dir-enabled = true;
+      };
+    };
   };
 
   sops =
