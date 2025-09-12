@@ -48,7 +48,7 @@ in
       signal-desktop
       sops
       telegram-desktop
-      trashy
+      trash-cli
       usbutils
       veracrypt
       wifi-qr
@@ -93,7 +93,7 @@ in
     };
     shellAliases = {
       ls = "eza";
-      x = "trash";
+      x = "trash-put";
     };
 
     # Home Manager can also manage your environment variables through
