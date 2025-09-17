@@ -226,7 +226,10 @@ in
     keepassxc = {
       enable = true;
       settings = {
-        Browser.Enabled = true;
+        Browser = {
+          Enabled = true;
+          AllowExpiredCredentials = true;
+        };
         GUI = {
           ApplicationTheme = "dark";
         };
