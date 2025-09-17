@@ -44,6 +44,7 @@ in
       neofetch
       nix-output-monitor
       nixfmt-rfc-style
+      nmon
       pwvucontrol
       rustup
       signal-desktop
