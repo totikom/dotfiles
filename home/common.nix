@@ -34,6 +34,7 @@ in
       firefox
       gcc
       htop
+      image-roll
       joplin-desktop
       kmymoney
       localsend
