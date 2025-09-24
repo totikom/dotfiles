@@ -12,8 +12,8 @@
         directory = "~/Music";
         library = "~/Documents/musiclibrary.db";
         import = {
-          move = "yes";
-          incremental = "yes";
+          move = true;
+          incremental = true;
           language = [
             "en"
             "ru"
