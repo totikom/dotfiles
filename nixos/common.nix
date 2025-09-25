@@ -121,6 +121,14 @@
       };
       ports = [ 55060 ];
     };
+    fail2ban = {
+      enable = true;
+      maxretry = 5;
+      ignoreIP = [
+        "192.168.0.0/16"
+      ];
+      bantime = "1d";
+    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -215,6 +223,7 @@
 
     # Allow ping
     allowPing = true;
+    pingLimit = "5/second";
   };
 
   nixpkgs.config.allowUnfree = true;
