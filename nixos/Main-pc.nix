@@ -96,6 +96,11 @@
       };
     };
   };
+  systemd.services.transmission.serviceConfig.BindPaths = [
+    "${config.users.users.eugene.home}/Videos"
+    "${config.users.users.eugene.home}/Books"
+    "${config.users.users.eugene.home}/Music"
+  ];
 
   sops =
     let
