@@ -88,6 +88,7 @@
       openFirewall = true;
       settings = {
         download-dir = "${config.users.users.eugene.home}/.junk";
+        download-queue-enabled = false;
         incomplete-dir-enabled = false;
         rename-partial-files = true;
         trash-original-torrent-files = true;
