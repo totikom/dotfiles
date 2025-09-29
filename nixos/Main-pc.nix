@@ -96,6 +96,11 @@
         watch-dir-enabled = true;
       };
     };
+    kubo = {
+      enable = true;
+      dataDir = "/mnt/Media/ipfs";
+      settings.Addresses.API = "http://127.0.0.1:5001";
+    };
   };
   systemd.services.transmission.serviceConfig.BindPaths = [
     "${config.users.users.eugene.home}/Videos"
