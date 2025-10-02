@@ -4,6 +4,7 @@
   inputs = {
     # NixOS official package source, using the nixos-25.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     # Used for user packages and dotfiles
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -23,6 +24,7 @@
     inputs@{
       self,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       disko,
       sops-nix,
@@ -34,6 +36,13 @@
       nixosConfigurations = {
         ThinkPadT490s = nixpkgs.lib.nixosSystem {
           modules = [
+            {
+              nixpkgs.overlays = [
+                (_: _: {
+                  mullvad = nixpkgs-unstable.legacyPackages.x86_64-linux.mullvad;
+                })
+              ];
+            }
             disko.nixosModules.disko
             ./disko/ThinkPadT490s.nix
             ./nixos/hardware-configuration.nix
