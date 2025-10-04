@@ -37,6 +37,7 @@ in
       image-roll
       joplin-desktop
       kmymoney
+      libreoffice-still
       localsend
       maim
       mc
