@@ -63,6 +63,20 @@
               "Redmi K80 Pro"
             ];
           };
+          "Main-pc videos" = {
+            id = "zczny-swe3w";
+            path = "~/Videos/Synced";
+            devices = [
+              "ThinkPadT490s"
+            ];
+          };
+          "Main-pc junk" = {
+            id = "tshjv-zsprm";
+            path = "~/.junk/Synced";
+            devices = [
+              "ThinkPadT490s"
+            ];
+          };
         };
       };
     };

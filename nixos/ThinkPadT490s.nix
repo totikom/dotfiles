@@ -61,6 +61,20 @@
               "ThinkPad"
             ];
           };
+          "Main-pc videos" = {
+            id = "zczny-swe3w";
+            path = "~/Videos/Synced";
+            devices = [
+              "Main-pc"
+            ];
+          };
+          "Main-pc junk" = {
+            id = "tshjv-zsprm";
+            path = "~/.junk/Synced";
+            devices = [
+              "Main-pc"
+            ];
+          };
         };
       };
     };
