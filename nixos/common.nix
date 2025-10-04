@@ -359,6 +359,18 @@
       };
     };
   };
+  hardware.sane = {
+    enable = true;
+    brscan4 = {
+      enable = true;
+      netDevices = {
+        home = {
+          model = "DCP-L2520DWR";
+          ip = "192.168.1.69";
+        };
+      };
+    };
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

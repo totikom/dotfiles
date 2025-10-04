@@ -51,6 +51,7 @@ in
       pwvucontrol
       rustup
       signal-desktop
+      simple-scan
       sops
       system-config-printer
       telegram-desktop
