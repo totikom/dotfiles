@@ -100,7 +100,22 @@
     };
 
     # Enable CUPS to print documents.
-    printing.enable = true;
+    printing = {
+      enable = true;
+      drivers = with pkgs; [
+        cups-filters
+        cups-browsed
+        brgenml1cupswrapper
+        brgenml1lpr
+        brlaser
+      ];
+    };
+
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
 
     mullvad-vpn.enable = true;
 
@@ -136,7 +151,12 @@
   users.users.eugene = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    extraGroups = [ "wheel" config.services.kubo.group ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "scanner"
+      "lp"
+      config.services.kubo.group
+    ]; # Enable ‘sudo’ for the user.
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBI3zcGyF5SimD6i8p5TS5WQJ25aOE6QI0SK90VyyK7r eugene@ThinkPadT490s"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIY6/YkxtBtCjA1aVaWzeDBRsXirlYiMjFf06N64udog eugene@Main-pc"

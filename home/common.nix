@@ -51,6 +51,7 @@ in
       rustup
       signal-desktop
       sops
+      system-config-printer
       telegram-desktop
       trash-cli
       usbutils
