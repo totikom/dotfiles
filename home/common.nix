@@ -249,13 +249,23 @@ in
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       history = {
+        size = 50000;
+        share = true;
         append = true;
         expireDuplicatesFirst = true;
         ignoreAllDups = true;
-        ignoreDups = true;
-        ignoreSpace = true;
+        ignoreDups = false;
+        ignoreSpace = false;
       };
-      historySubstringSearch.enable = true;
+      historySubstringSearch = {
+        enable = true;
+        searchUpKey = [
+          "$terminfo[kcuu1]"
+        ];
+        searchDownKey = [
+          "$terminfo[kcud1]"
+        ];
+      };
       completionInit = ''
         autoload -U compinit && compinit
         ## case insensitive path-completion
