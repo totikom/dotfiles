@@ -213,6 +213,10 @@
             type route hook output priority -1; policy accept;
             ip6 daddr 200::/7 ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
           }
+          chain allowIncoming {
+            type filter hook input priority -100; policy accept;
+            ip6 daddr 200::/7 ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
+          }
         '';
         family = "inet";
       };

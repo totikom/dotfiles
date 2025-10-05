@@ -66,6 +66,13 @@
         };
         Main-pc = nixpkgs.lib.nixosSystem {
           modules = [
+            {
+              nixpkgs.overlays = [
+                (_: _: {
+                  mullvad = nixpkgs-unstable.legacyPackages.x86_64-linux.mullvad;
+                })
+              ];
+            }
             disko.nixosModules.disko
             ./disko/Main-pc.nix
             ./nixos/hardware-configuration_other.nix
