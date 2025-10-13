@@ -283,6 +283,19 @@ in
         pane_frames = false;
         ui.pane_frames.hide_session_name = true;
         scroll_buffer_size = 100000;
+        keybinds = {
+          unbind = [
+            "Ctrl q"
+            "Ctrl o"
+            "Ctrl n"
+          ];
+          normal = {
+            "bind \"Ctrl k\"".SwitchToMode = "Resize";
+            "bind \"Ctrl x\"".SwitchToMode = "Session";
+          };
+          resize."bind \"Ctrl k\"".SwitchToMode = "Normal";
+          session."bind \"Ctrl x\"".SwitchToMode = "Normal";
+        };
       };
     };
     starship = {
