@@ -233,9 +233,12 @@
       53317 # Local Send
       55060 # ssh
       # ygg ports
+      15015
+      65533
       7991
       9002
-      65533
+      9003
+      9004
     ];
 
     # UDP ports for various services
@@ -244,9 +247,12 @@
       443 # HTTP/3
       55060 # ssh
       # ygg ports
+      15015
+      65533
       7991
       9002
-      65533
+      9003
+      9004
     ];
 
     # Allow ping
