@@ -99,6 +99,7 @@ in
     shellAliases = {
       ls = "eza";
       x = "trash-put";
+      cpr = "cp --reflink=always --recursive";
     };
 
     # Home Manager can also manage your environment variables through
