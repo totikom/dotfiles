@@ -116,11 +116,14 @@
       settings.Addresses.API = "http://127.0.0.1:5001";
     };
   };
-  systemd.services.transmission.serviceConfig.BindPaths = [
-    "${config.users.users.eugene.home}/Videos"
-    "${config.users.users.eugene.home}/Books"
-    "${config.users.users.eugene.home}/Music"
-  ];
+  systemd.services.transmission.serviceConfig = {
+    BindPaths = [
+      "${config.users.users.eugene.home}/Videos"
+      "${config.users.users.eugene.home}/Books"
+      "${config.users.users.eugene.home}/Music"
+    ];
+    TimeoutSec = "5m";
+  };
 
   sops =
     let
