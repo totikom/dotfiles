@@ -232,6 +232,7 @@
       443 # HTTPS
       53317 # Local Send
       55060 # ssh
+      55061 # local ygg
       # ygg ports
       15015
       65533
