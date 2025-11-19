@@ -83,27 +83,6 @@
     yggdrasil = {
       enable = true;
       configFile = config.sops.secrets."yggdrasil/Main-pc/conf".path;
-      openMulticastPort = true;
-      settings = {
-        Peers = [
-          "tcp://srv.itrus.su:7991"
-          "tcp://ip4.01.msk.ru.dioni.su:9002"
-          "quic://ip4.01.msk.ru.dioni.su:9002"
-          "tcp://s-mow-0.sergeysedoy97.ru:65533"
-          "tcp://s-mow-1.sergeysedoy97.ru:65533"
-          "tcp://x-mow-1.sergeysedoy97.ru:65533"
-          "tls://[2a09:5302:ffff::992]:443"
-        ];
-        MulticastInterfaces = [
-          {
-            Regex = ".*";
-            Beacon = true;
-            Listen = true;
-            Password = "";
-            Port = 55061;
-          }
-        ];
-      };
     };
     transmission = {
       enable = true;

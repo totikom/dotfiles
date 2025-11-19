@@ -82,31 +82,6 @@
     yggdrasil = {
       enable = true;
       configFile = config.sops.secrets."yggdrasil/ThinkPadT490s/conf".path;
-      openMulticastPort = true;
-      settings = {
-        Peers = [
-          "quic://asia.deinfra.org:15015"
-          "quic://ip4.01.msk.ru.dioni.su:9002"
-          "quic://ip4.01.msk.ru.dioni.su:9002"
-          "tcp://ip4.01.ekb.ru.dioni.su:9002"
-          "tcp://ip4.01.msk.ru.dioni.su:9002"
-          "tcp://ip4.01.msk.ru.dioni.su:9002"
-          "tcp://ip4.01.tom.ru.dioni.su:9002"
-          "tcp://srv.itrus.su:7991"
-          "tls://asia.deinfra.org:15015"
-          "tls://ip4.01.msk.ru.dioni.su:9003"
-          "ws://ip4.01.msk.ru.dioni.su:9004"
-        ];
-        MulticastInterfaces = [
-          {
-            Regex = ".*";
-            Beacon = true;
-            Listen = true;
-            Password = "";
-            Port = 55061;
-          }
-        ];
-      };
     };
 
     snapper = {

@@ -145,6 +145,29 @@
       bantime = "1d";
     };
     v2raya.enable = true;
+
+    yggdrasil = {
+      openMulticastPort = true;
+      settings = {
+        Peers = [
+          "quic://asia.deinfra.org:15015"
+          "quic://ip4.01.msk.ru.dioni.su:9002"
+          "tcp://ip4.01.msk.ru.dioni.su:9002"
+          "tcp://srv.itrus.su:7991"
+          "tls://ip4.01.msk.ru.dioni.su:9003"
+          "ws://ip4.01.msk.ru.dioni.su:9004"
+        ];
+        MulticastInterfaces = [
+          {
+            Regex = ".*";
+            Beacon = true;
+            Listen = true;
+            Password = "";
+            Port = 55061;
+          }
+        ];
+      };
+    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
