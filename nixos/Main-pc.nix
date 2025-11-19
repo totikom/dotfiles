@@ -104,7 +104,6 @@
           }
         ];
       };
-
     };
     transmission = {
       enable = true;
