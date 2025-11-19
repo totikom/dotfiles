@@ -121,6 +121,7 @@
       "${config.users.users.eugene.home}/Videos"
       "${config.users.users.eugene.home}/Books"
       "${config.users.users.eugene.home}/Music"
+      "/mnt/Media"
     ];
     TimeoutSec = "5m";
   };
