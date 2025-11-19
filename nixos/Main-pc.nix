@@ -9,46 +9,10 @@
   services = {
     syncthing = {
       enable = true;
-      openDefaultPorts = true;
-      overrideFolders = true;
-      user = "eugene";
-      dataDir = "/home/eugene";
-      overrideDevices = true;
       cert = config.sops.secrets."syncthing/Main-pc/cert.pem".path;
       key = config.sops.secrets."syncthing/Main-pc/key.pem".path;
-      extraFlags = [ "--no-default-folder" ]; # Don't create default ~/Sync folder
       settings = {
-        devices = {
-          "Redmi K80 Pro" = {
-            id = "7KDCBRR-3VGLY3C-QZ2T6TL-2FC76U6-3AEEEXQ-JHTYWCP-D6LFWBU-7OTWCAR";
-          };
-          "ThinkPad" = {
-            id = "I3NH3E2-RTOWUQI-RYIRCVC-WOHX2GJ-V6TOFTD-BGOWB22-B5E67VQ-77DHHQA";
-          };
-          "ThinkPadT490s" = {
-            id = "FMJ3P2U-2FEYA7S-TGSEAU5-EKLDGYS-RJ3VJ2O-RLMUM27-OJYDAYK-QF5WNQG";
-          };
-        };
         folders = {
-          "tab.digital" = {
-            label = "tab.digital";
-            id = "ego4c-ckkzv";
-            path = "~/Documents/tab.digital";
-            devices = [
-              "Redmi K80 Pro"
-              "ThinkPad"
-              "ThinkPadT490s"
-            ];
-          };
-          "Documents" = {
-            id = "fp5rw-7j1x3";
-            path = "~/Documents/Phone";
-            devices = [
-              "Redmi K80 Pro"
-              "ThinkPad"
-              "ThinkPadT490s"
-            ];
-          };
           "Phone Photos" = {
             id = "0yno0-m0zuz";
             path = "~/Pictures/Phone";
@@ -61,20 +25,6 @@
             path = "~/Music";
             devices = [
               "Redmi K80 Pro"
-            ];
-          };
-          "Main-pc videos" = {
-            id = "zczny-swe3w";
-            path = "~/Videos/Synced";
-            devices = [
-              "ThinkPadT490s"
-            ];
-          };
-          "Main-pc junk" = {
-            id = "tshjv-zsprm";
-            path = "~/.junk/Synced";
-            devices = [
-              "ThinkPadT490s"
             ];
           };
         };

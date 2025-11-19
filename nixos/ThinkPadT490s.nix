@@ -21,62 +21,8 @@
 
     syncthing = {
       enable = true;
-      openDefaultPorts = true;
-      overrideFolders = true;
-      user = "eugene";
-      dataDir = "/home/eugene";
-      overrideDevices = true;
       cert = config.sops.secrets."syncthing/ThinkPadT490s/cert.pem".path;
       key = config.sops.secrets."syncthing/ThinkPadT490s/key.pem".path;
-      extraFlags = [ "--no-default-folder" ]; # Don't create default ~/Sync folder
-      settings = {
-        devices = {
-          "Redmi K80 Pro" = {
-            id = "7KDCBRR-3VGLY3C-QZ2T6TL-2FC76U6-3AEEEXQ-JHTYWCP-D6LFWBU-7OTWCAR";
-          };
-          "ThinkPad" = {
-            id = "I3NH3E2-RTOWUQI-RYIRCVC-WOHX2GJ-V6TOFTD-BGOWB22-B5E67VQ-77DHHQA";
-          };
-          "Main-pc" = {
-            id = "34EFVRV-MRV5SDY-TGYZAM2-J6OJECF-PBMEBV2-TX2CUKN-RACKTV2-CDUK5Q4";
-          };
-        };
-        folders = {
-          "tab.digital" = {
-            label = "tab.digital";
-            id = "ego4c-ckkzv";
-            path = "~/Documents/tab.digital";
-            devices = [
-              "Main-pc"
-              "Redmi K80 Pro"
-              "ThinkPad"
-            ];
-          };
-          "Documents" = {
-            id = "fp5rw-7j1x3";
-            path = "~/Documents/Phone";
-            devices = [
-              "Main-pc"
-              "Redmi K80 Pro"
-              "ThinkPad"
-            ];
-          };
-          "Main-pc videos" = {
-            id = "zczny-swe3w";
-            path = "~/Videos/Synced";
-            devices = [
-              "Main-pc"
-            ];
-          };
-          "Main-pc junk" = {
-            id = "tshjv-zsprm";
-            path = "~/.junk/Synced";
-            devices = [
-              "Main-pc"
-            ];
-          };
-        };
-      };
     };
 
     yggdrasil = {

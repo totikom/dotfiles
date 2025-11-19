@@ -168,6 +168,70 @@
         ];
       };
     };
+
+    syncthing = {
+      openDefaultPorts = true;
+      overrideFolders = true;
+      user = "eugene";
+      dataDir = "/home/eugene";
+      overrideDevices = true;
+      extraFlags = [ "--no-default-folder" ]; # Don't create default ~/Sync folder
+      settings = {
+        devices = {
+          "Redmi K80 Pro" = {
+            id = "7KDCBRR-3VGLY3C-QZ2T6TL-2FC76U6-3AEEEXQ-JHTYWCP-D6LFWBU-7OTWCAR";
+          };
+          "ThinkPad" = {
+            id = "I3NH3E2-RTOWUQI-RYIRCVC-WOHX2GJ-V6TOFTD-BGOWB22-B5E67VQ-77DHHQA";
+          };
+          "Main-pc" = {
+            id = "34EFVRV-MRV5SDY-TGYZAM2-J6OJECF-PBMEBV2-TX2CUKN-RACKTV2-CDUK5Q4";
+          };
+          "ThinkPadT490s" = {
+            id = "FMJ3P2U-2FEYA7S-TGSEAU5-EKLDGYS-RJ3VJ2O-RLMUM27-OJYDAYK-QF5WNQG";
+          };
+        };
+        folders = {
+          "tab.digital" = {
+            label = "tab.digital";
+            id = "ego4c-ckkzv";
+            path = "~/Documents/tab.digital";
+            devices = [
+              "Main-pc"
+              "Redmi K80 Pro"
+              "ThinkPad"
+              "ThinkPadT490s"
+            ];
+          };
+          "Documents" = {
+            id = "fp5rw-7j1x3";
+            path = "~/Documents/Phone";
+            devices = [
+              "Main-pc"
+              "Redmi K80 Pro"
+              "ThinkPad"
+              "ThinkPadT490s"
+            ];
+          };
+          "Main-pc videos" = {
+            id = "zczny-swe3w";
+            path = "~/Videos/Synced";
+            devices = [
+              "Main-pc"
+              "ThinkPadT490s"
+            ];
+          };
+          "Main-pc junk" = {
+            id = "tshjv-zsprm";
+            path = "~/.junk/Synced";
+            devices = [
+              "Main-pc"
+              "ThinkPadT490s"
+            ];
+          };
+        };
+      };
+    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
