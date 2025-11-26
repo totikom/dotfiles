@@ -33,6 +33,7 @@ in
       eza
       firefox
       gcc
+      gtrash
       htop
       image-roll
       joplin-desktop
@@ -53,7 +54,6 @@ in
       sops
       system-config-printer
       telegram-desktop
-      trash-cli
       usbutils
       veracrypt
       wifi-qr
@@ -98,7 +98,7 @@ in
     };
     shellAliases = {
       ls = "eza";
-      x = "trash-put";
+      x = "gtrash put";
       cpr = "cp --reflink=always --recursive";
     };
 
