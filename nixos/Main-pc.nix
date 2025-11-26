@@ -55,14 +55,30 @@
       settings.Addresses.API = "http://127.0.0.1:5001";
     };
   };
-  systemd.services.transmission.serviceConfig = {
-    BindPaths = [
-      "${config.users.users.eugene.home}/Videos"
-      "${config.users.users.eugene.home}/Books"
-      "${config.users.users.eugene.home}/Music"
-      "/mnt/Media"
-    ];
-    TimeoutSec = "5m";
+  systemd.services = {
+    transmission.serviceConfig = {
+      BindPaths = [
+        "${config.users.users.eugene.home}/Videos"
+        "${config.users.users.eugene.home}/Books"
+        "${config.users.users.eugene.home}/Music"
+        "/mnt/Media"
+      ];
+      TimeoutSec = "5m";
+    };
+    freeleech = {
+      description = "Move torrent files to download dir during freeleech";
+      script = ''
+        set -ux
+        ${pkgs.coreutils}/bin/mv \
+        ${config.users.users.eugene.home}/Downloads/Freeleech/* \
+        ${config.users.users.eugene.home}/Downloads 
+      '';
+      serviceConfig = {
+        Type = "oneshot";
+        User = "eugene";
+      };
+      startAt = "Sat *-*~01..07 0:05 Europe/Moscow";
+    };
   };
 
   sops =
