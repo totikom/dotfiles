@@ -64,6 +64,7 @@
                       swap.swapfile.size = "16G";
                     };
                   };
+                  mountpoint = "/mnt/root_subvol";
                 };
               };
             };
@@ -130,6 +131,7 @@
                       ];
                     };
                   };
+                  mountpoint = "/mnt/media_subvol";
                 };
               };
             };
