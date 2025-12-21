@@ -30,6 +30,7 @@ in
       bluetui
       cryfs
       dotter
+      doublecmd
       eza
       firefox
       gcc
@@ -433,7 +434,7 @@ in
 
         # Apps
         "${mod}+z" = "exec firefox";
-        "${mod}+x" = "exec alacritty --command yazi";
+        "${mod}+x" = "exec doublecmd";
 
         # Move focus
         "${mod}+h" = "focus left";
