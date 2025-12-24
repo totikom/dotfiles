@@ -521,6 +521,7 @@ in
       "application/pdf" = "org.pwmt.zathura.desktop";
       "x-scheme-handler/magnet" = "userapp-transmission-gtk-IKDBC3.desktop";
       "x-scheme-handler/tg" = "org.telegram.desktop.desktop";
+      "text/markdown" = "gvim.desktop";
     };
   };
 
