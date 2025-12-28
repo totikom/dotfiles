@@ -147,9 +147,14 @@ in
     };
     git = {
       enable = true;
-      delta.enable = true;
-      userName = "Eugene Lomov";
-      userEmail = "eugene.lomov@protonmail.com";
+      settings = {
+        user = {
+          name = "Eugene Lomov";
+          email = "eugene.lomov@protonmail.com";
+        };
+        push.autoSetupRemote = true;
+        merge.tool = "vimdiff";
+      };
       ignores = [
         "*.swp"
       ];
@@ -157,10 +162,10 @@ in
         key = "3197B6B3AE53574B";
         signByDefault = true;
       };
-      extraConfig = {
-        push.autoSetupRemote = true;
-        merge.tool = "vimdiff";
-      };
+    };
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
     };
     gh = {
       enable = true;

@@ -175,7 +175,6 @@
       user = "eugene";
       dataDir = "/home/eugene";
       overrideDevices = true;
-      extraFlags = [ "--no-default-folder" ]; # Don't create default ~/Sync folder
       settings = {
         devices = {
           "Redmi K80 Pro" = {
