@@ -43,7 +43,6 @@ in
       localsend
       maim
       mc
-      mmex
       ncdu
       neofetch
       nix-output-monitor
