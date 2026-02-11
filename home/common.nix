@@ -473,11 +473,10 @@ in
         "Shift+Print" = ''exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"'';
 
         # Clipboard Screenshots
-        "Ctrl+Print" = ''exec --no-startup-id maim | xclip -selection clipboard -t image/png'';
+        "Ctrl+Print" = "exec --no-startup-id maim | xclip -selection clipboard -t image/png";
         "Ctrl+${mod}+Print" =
-          ''exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png'';
-        "Ctrl+Shift+Print" =
-          ''exec --no-startup-id maim --select | xclip -selection clipboard -t image/png'';
+          "exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png";
+        "Ctrl+Shift+Print" = "exec --no-startup-id maim --select | xclip -selection clipboard -t image/png";
 
       };
       modes = {
