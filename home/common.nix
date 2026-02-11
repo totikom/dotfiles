@@ -99,7 +99,9 @@ in
     };
     shellAliases = {
       ls = "eza";
+      ll = "eza -la";
       x = "gtrash put";
+      ncdu = "ncdu --delete-command 'gtrash put'";
       cpr = "cp --reflink=always --recursive";
     };
 
