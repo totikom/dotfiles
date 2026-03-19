@@ -108,6 +108,7 @@
         brgenml1cupswrapper
         brgenml1lpr
         brlaser
+        epson-escpr
       ];
     };
 
