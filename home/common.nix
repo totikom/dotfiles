@@ -29,6 +29,7 @@ in
       age
       bluetui
       cryfs
+      deltachat-desktop
       dotter
       doublecmd
       eza
