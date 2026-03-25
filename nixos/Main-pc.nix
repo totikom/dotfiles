@@ -50,7 +50,7 @@
       };
     };
     kubo = {
-      enable = true;
+      enable = false;
       dataDir = "/mnt/Media/ipfs";
       settings.Addresses.API = "http://127.0.0.1:5001";
     };
