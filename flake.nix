@@ -18,6 +18,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    snapborg-repo = {
+    url = "github:totikom/snapborg/nix_flake";
+    flake = false;
+    };
   };
 
   outputs =
@@ -28,9 +32,18 @@
       home-manager,
       disko,
       sops-nix,
+      snapborg-repo,
     }:
     let
       system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+      snapborgSrc = snapborg-repo;
+      snapborg = pkgs.callPackage (snapborgSrc + "/nix/default.nix") {
+        lib = pkgs.lib;
+        inherit pkgs;
+        pythonPackages = pkgs.python313Packages;
+        src = snapborgSrc;
+      };
     in
     {
       nixosConfigurations = {
@@ -43,6 +56,11 @@
                 })
               ];
             }
+            ({ pkgs, ... }: {
+              environment.systemPackages = with pkgs; [
+                snapborg
+              ];
+            })
             disko.nixosModules.disko
             ./disko/ThinkPadT490s.nix
             ./nixos/hardware-configuration.nix
