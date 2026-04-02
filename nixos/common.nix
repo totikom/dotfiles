@@ -119,6 +119,7 @@
     };
 
     mullvad-vpn.enable = true;
+    udisks2.enable = true;
 
     # Enable touchpad support (enabled default in most desktopManager).
     libinput = {
