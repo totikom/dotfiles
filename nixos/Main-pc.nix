@@ -54,6 +54,41 @@
       dataDir = "/mnt/Media/ipfs";
       settings.Addresses.API = "http://127.0.0.1:5001";
     };
+    snapper = {
+      snapshotInterval = "hourly";
+      persistentTimer = true;
+      cleanupInterval = "1d";
+      configs = {
+        home = {
+          FSTYPE = "btrfs";
+          SUBVOLUME = "/home";
+          SPACE_LIMIT = "0.5";
+          FREE_LIMIT = "0.1";
+          TIMELINE_CREATE = true;
+          TIMELINE_CLEANUP = true;
+          TIMELINE_MIN_AGE = "1800";
+          TIMELINE_LIMIT_HOURLY = "1";
+          TIMELINE_LIMIT_DAILY = "7";
+          TIMELINE_LIMIT_WEEKLY = "8";
+          TIMELINE_LIMIT_MONTHLY = "4";
+          TIMELINE_LIMIT_YEARLY = "0";
+        };
+        pictures = {
+          FSTYPE = "btrfs";
+          SUBVOLUME = "/home/eugene/Pictures";
+          SPACE_LIMIT = "0.5";
+          FREE_LIMIT = "0.01";
+          TIMELINE_CREATE = true;
+          TIMELINE_CLEANUP = true;
+          TIMELINE_MIN_AGE = "1800";
+          TIMELINE_LIMIT_HOURLY = "1";
+          TIMELINE_LIMIT_DAILY = "7";
+          TIMELINE_LIMIT_WEEKLY = "8";
+          TIMELINE_LIMIT_MONTHLY = "4";
+          TIMELINE_LIMIT_YEARLY = "0";
+        };
+      };
+    };
   };
   systemd.services = {
     transmission.serviceConfig = {
