@@ -91,6 +91,11 @@
                 })
               ];
             }
+            ({ pkgs, ... }: {
+              environment.systemPackages = with pkgs; [
+                snapborg
+              ];
+            })
             disko.nixosModules.disko
             ./disko/Main-pc.nix
             ./nixos/hardware-configuration_other.nix

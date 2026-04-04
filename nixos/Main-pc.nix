@@ -143,6 +143,10 @@
           sopsFile = ../yggdrasil/Main-pc/yggdrasil.conf;
         };
       };
+      secrets_from_default_file = {
+        "borg/Main-pc/home" = { };
+        "borg/Main-pc/pictures" = { };
+      };
     in
     {
       # This will add secrets.yml to the nix store
@@ -154,6 +158,6 @@
       age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
       # This is the actual specification of the secrets.
-      secrets = hand_written_secrets // generated_secrets;
+      secrets = hand_written_secrets // generated_secrets // secrets_from_default_file;
     };
 }
