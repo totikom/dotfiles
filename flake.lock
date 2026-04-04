@@ -79,7 +79,25 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "snapborg-repo": "snapborg-repo",
         "sops-nix": "sops-nix"
+      }
+    },
+    "snapborg-repo": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775303221,
+        "narHash": "sha256-RCQpxWSBIgZvTmAeOdX3ba6Xo4Z5FiUjAD96VigexQo=",
+        "owner": "totikom",
+        "repo": "snapborg",
+        "rev": "0db58ee66ed073a819e91804b14670acdff289b2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "totikom",
+        "ref": "nix_flake",
+        "repo": "snapborg",
+        "type": "github"
       }
     },
     "sops-nix": {

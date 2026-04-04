@@ -119,6 +119,7 @@
     };
 
     mullvad-vpn.enable = true;
+    udisks2.enable = true;
 
     # Enable touchpad support (enabled default in most desktopManager).
     libinput = {
@@ -263,6 +264,7 @@
   environment.systemPackages = with pkgs; [
     # Flakes clones its dependencies through the git command,
     # so git must be installed firs
+    borgbackup
     duperemove
     git
     htop

@@ -79,6 +79,9 @@
           sopsFile = ../yggdrasil/ThinkPadT490s/yggdrasil.conf;
         };
       };
+      secrets_from_default_file = {
+        "borg/ThinkPadT490s/home" = { };
+      };
     in
     {
       # This will add secrets.yml to the nix store
@@ -90,7 +93,7 @@
       age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
       # This is the actual specification of the secrets.
-      secrets = hand_written_secrets // generated_secrets;
+      secrets = hand_written_secrets // generated_secrets // secrets_from_default_file;
     };
 
   systemd.sleep.extraConfig = ''
