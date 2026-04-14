@@ -89,6 +89,7 @@
         };
       };
     };
+    apcupsd.enable = true;
   };
   systemd.services = {
     transmission.serviceConfig = {
