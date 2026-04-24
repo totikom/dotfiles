@@ -1,4 +1,0 @@
-username = "{{username}}"
-password = "{{mpdas_pass}}"
-runas = mpd
-debug = 1
