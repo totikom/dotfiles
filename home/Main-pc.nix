@@ -42,7 +42,6 @@
   # environment.
   home.packages = with pkgs; [
     digikam
-    doublecmd
     rustmission
     transmission-remote-gtk
   ];
