@@ -30,7 +30,7 @@
           "scans"
           "Artwork"
         ];
-        plugins = [ "unimported" ];
+        plugins = [ "unimported" "musicbrainz" ];
         unimported = {
           ignore_subdirectories = [ "UNIMPORTED" ];
           ignore_extensions = [ "db" ];
