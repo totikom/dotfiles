@@ -55,7 +55,7 @@
       settings.Addresses.API = "http://127.0.0.1:5001";
     };
     snapper = {
-      snapshotInterval = "hourly";
+      snapshotInterval = "daily";
       persistentTimer = true;
       cleanupInterval = "1d";
       configs = {
