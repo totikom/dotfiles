@@ -33,11 +33,11 @@ in
       dotter
       doublecmd
       eza
+      feh
       firefox
       gcc
       gtrash
       htop
-      image-roll
       joplin-desktop
       kmymoney
       libreoffice-still
