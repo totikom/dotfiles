@@ -203,6 +203,10 @@
               "ThinkPad"
               "ThinkPadT490s"
             ];
+            versioning = {
+              type = "trashcan";
+              params.cleanoutDays = "14";
+            };
           };
           "Documents" = {
             id = "fp5rw-7j1x3";
@@ -213,6 +217,10 @@
               "ThinkPad"
               "ThinkPadT490s"
             ];
+            versioning = {
+              type = "trashcan";
+              params.cleanoutDays = "14";
+            };
           };
           "Main-pc videos" = {
             id = "zczny-swe3w";
@@ -221,6 +229,10 @@
               "Main-pc"
               "ThinkPadT490s"
             ];
+            versioning = {
+              type = "trashcan";
+              params.cleanoutDays = "14";
+            };
           };
           "Main-pc junk" = {
             id = "tshjv-zsprm";
@@ -229,6 +241,10 @@
               "Main-pc"
               "ThinkPadT490s"
             ];
+            versioning = {
+              type = "trashcan";
+              params.cleanoutDays = "14";
+            };
           };
         };
       };

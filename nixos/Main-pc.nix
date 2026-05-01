@@ -19,6 +19,10 @@
             devices = [
               "Redmi K80 Pro"
             ];
+            versioning = {
+              type = "trashcan";
+              params.cleanoutDays = "14";
+            };
           };
           "Music" = {
             id = "bxcjr-59xqc";
