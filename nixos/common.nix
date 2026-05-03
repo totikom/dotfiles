@@ -249,6 +249,11 @@
         };
       };
     };
+     udev.extraRules = ''
+                # ST-Link V2-1
+                SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE="0666", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1", SYMLINK+="stlinkv2-1_%n"
+                SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3752", MODE="0666", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1", SYMLINK+="stlinkv2-1_%n"
+              '';
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
