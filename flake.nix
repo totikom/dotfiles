@@ -19,8 +19,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     snapborg-repo = {
-    url = "github:totikom/snapborg/nix_flake";
-    flake = false;
+      url = "github:totikom/snapborg/nix_flake";
+      flake = false;
     };
   };
 
@@ -56,11 +56,14 @@
                 })
               ];
             }
-            ({ pkgs, ... }: {
-              environment.systemPackages = with pkgs; [
-                snapborg
-              ];
-            })
+            (
+              { pkgs, ... }:
+              {
+                environment.systemPackages = with pkgs; [
+                  snapborg
+                ];
+              }
+            )
             disko.nixosModules.disko
             ./disko/ThinkPadT490s.nix
             ./nixos/hardware-configuration.nix
@@ -91,11 +94,14 @@
                 })
               ];
             }
-            ({ pkgs, ... }: {
-              environment.systemPackages = with pkgs; [
-                snapborg
-              ];
-            })
+            (
+              { pkgs, ... }:
+              {
+                environment.systemPackages = with pkgs; [
+                  snapborg
+                ];
+              }
+            )
             disko.nixosModules.disko
             ./disko/Main-pc.nix
             ./nixos/hardware-configuration_other.nix
