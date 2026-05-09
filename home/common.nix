@@ -468,10 +468,11 @@ in
         "${mod}+Shift+x" = "exec betterlockscreen -l dim --off 30";
 
         # Screenshots
-        "Print" = ''exec --no-startup-id maim "/home/$USER/Pictures/$(date)"'';
+        "Print" = ''exec --no-startup-id maim "/home/$USER/Pictures/$(date --rfc-3339=seconds)".png'';
         "${mod}+Print" =
-          ''exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"'';
-        "Shift+Print" = ''exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"'';
+          ''exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date --rfc-3339=seconds)".png'';
+        "Shift+Print" =
+          ''exec --no-startup-id maim --select "/home/$USER/Pictures/$(date --rfc-3339=seconds)".png'';
 
         # Clipboard Screenshots
         "Ctrl+Print" = "exec --no-startup-id maim | xclip -selection clipboard -t image/png";
