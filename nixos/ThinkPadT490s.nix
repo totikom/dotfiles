@@ -25,11 +25,6 @@
       key = config.sops.secrets."syncthing/ThinkPadT490s/key.pem".path;
     };
 
-    yggdrasil = {
-      enable = true;
-      configFile = config.sops.secrets."yggdrasil/ThinkPadT490s/conf".path;
-    };
-
     snapper = {
       snapshotInterval = "hourly";
       persistentTimer = true;
@@ -74,9 +69,9 @@
           mode = "0600";
           sopsFile = ../syncthing/ThinkPadT490s/key.pem;
         };
-        "yggdrasil/ThinkPadT490s/conf" = {
+        "yggdrasil_key" = {
           format = "binary";
-          sopsFile = ../yggdrasil/ThinkPadT490s/yggdrasil.conf;
+          sopsFile = ../yggdrasil/ThinkPadT490s/key.pem;
         };
       };
       secrets_from_default_file = {
@@ -96,10 +91,11 @@
       secrets = hand_written_secrets // generated_secrets // secrets_from_default_file;
     };
 
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=yes
-  '';
-  #AllowHibernation=no
-  #AllowHybridSleep=no
-  #AllowSuspendThenHibernate=no
+  systemd.sleep.settings.Sleep = {
+
+    AllowSuspend = "yes";
+    #AllowHibernation="no";
+    #AllowHybridSleep="no";
+    #AllowSuspendThenHibernate="no";
+  };
 }

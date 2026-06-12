@@ -150,6 +150,7 @@
 
     yggdrasil = {
       openMulticastPort = true;
+      enable = true;
       settings = {
         Peers = [
           "quic://asia.deinfra.org:15015"
@@ -168,6 +169,7 @@
             Port = 55061;
           }
         ];
+        PrivateKeyPath = config.sops.secrets."yggdrasil_key".path;
       };
     };
 

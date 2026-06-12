@@ -45,7 +45,6 @@ in
       maim
       mc
       ncdu
-      neofetch
       nix-output-monitor
       nixfmt-rfc-style
       nmon

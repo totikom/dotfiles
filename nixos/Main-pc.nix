@@ -34,10 +34,6 @@
         };
       };
     };
-    yggdrasil = {
-      enable = true;
-      configFile = config.sops.secrets."yggdrasil/Main-pc/conf".path;
-    };
     transmission = {
       enable = true;
       package = pkgs.transmission_4;
@@ -143,9 +139,9 @@
           mode = "0600";
           sopsFile = ../syncthing/Main-pc/key.pem;
         };
-        "yggdrasil/Main-pc/conf" = {
+        "yggdrasil_key" = {
           format = "binary";
-          sopsFile = ../yggdrasil/Main-pc/yggdrasil.conf;
+          sopsFile = ../yggdrasil/Main-pc/key.pem;
         };
       };
       secrets_from_default_file = {
