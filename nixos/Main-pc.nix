@@ -89,7 +89,18 @@
         };
       };
     };
-    apcupsd.enable = true;
+    apcupsd = {
+      enable = true;
+      configText = ''
+        UPSCABLE usb
+        UPSTYPE usb
+        ONBATTERYDELAY 6
+        BATTERYLEVEL 5
+        MINUTES 2
+        TIMEOUT 0
+        NISIP 127.0.0.1
+        '';
+    };
   };
   systemd.services = {
     transmission.serviceConfig = {
