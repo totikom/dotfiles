@@ -93,6 +93,9 @@ in
       #   org.gradle.console=verbose
       #   org.gradle.daemon.idletimeout=3600000
       # '';
+      ".config/zathura/zathurarc".text = ''
+        set selection-clipboard clipboard
+      '';
     };
     sessionVariables = {
       SHELL = "${pkgs.zsh}/bin/zsh";
