@@ -46,7 +46,7 @@ in
       mc
       ncdu
       nix-output-monitor
-      nixfmt-rfc-style
+      nixfmt
       nmon
       pwvucontrol
       rustup
@@ -60,7 +60,7 @@ in
       wifi-qr
       xclip
       xdotool
-      xorg.xbacklight
+      xbacklight
       yubikey-manager
       yubioath-flutter
       zathura
@@ -401,6 +401,7 @@ in
     yazi = {
       enable = true;
       enableZshIntegration = true;
+      shellWrapperName = "yy";
       settings = {
         sort_by = "natural";
         sort_sensitive = true;
