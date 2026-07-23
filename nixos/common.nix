@@ -153,12 +153,17 @@
       enable = true;
       settings = {
         Peers = [
-          "quic://asia.deinfra.org:15015"
-          "quic://ip4.01.msk.ru.dioni.su:9002"
-          "tcp://ip4.01.msk.ru.dioni.su:9002"
-          "tcp://srv.itrus.su:7991"
-          "tls://ip4.01.msk.ru.dioni.su:9003"
-          "ws://ip4.01.msk.ru.dioni.su:9004"
+          "wss://ygg.mvault.ru.net:443"
+          "tcp://ygg-msk-1.averyan.ru:8363"
+          "tls://ygg-msk-1.averyan.ru:8362"
+          "tcp://u-neroit.ru:7000"
+          "wss://assets.route172.de:443"
+          "tls://kursk.cleverfox.org:15015"
+          "quic://kursk.cleverfox.org:15015"
+          "tcp://37.186.113.100:1514"
+          "tls://37.186.113.100:1515"
+          "quic://37.186.113.100:1515"
+          "ws://37.186.113.100:1516"
         ];
         MulticastInterfaces = [
           {
