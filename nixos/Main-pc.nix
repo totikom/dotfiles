@@ -101,6 +101,22 @@
         NISIP 127.0.0.1
         '';
     };
+    stash = {
+      enable = true;
+      settings = {
+        stash = [
+          {
+            path = "/home/eugene/.junk";
+          }
+        ];
+        mutableSettings = true;
+        parallel_tasks = 0;
+      };
+      passwordFile = config.sops.secrets."stash/password".path;
+      username = "admin";
+      jwtSecretKeyFile = config.sops.secrets."stash/jwtSecretKey".path;
+      sessionStoreKeyFile = config.sops.secrets."stash/sessionStoreKey".path;
+    };
   };
   systemd.services = {
     transmission.serviceConfig = {
@@ -158,6 +174,9 @@
       secrets_from_default_file = {
         "borg/Main-pc/home" = { };
         "borg/Main-pc/pictures" = { };
+        "stash/jwtSecretKey" = { };
+        "stash/password" = { };
+        "stash/sessionStoreKey" = { };
       };
     in
     {
