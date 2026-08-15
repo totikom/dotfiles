@@ -309,6 +309,74 @@ in
           session."bind \"Ctrl x\"".SwitchToMode = "Normal";
         };
       };
+      layouts = {
+        default = {
+          layout = {
+            _children = [
+              {
+                default_tab_template = {
+                  _children = [
+                    {
+                      pane = {
+                        borderless = true;
+                        plugin = {
+                          location = "zellij:tab-bar";
+                        };
+                        size = 1;
+                      };
+                    }
+                    {
+                      children = { };
+                    }
+                    {
+                      pane = {
+                        borderless = true;
+                        plugin = {
+                          location = "zellij:status-bar";
+                        };
+                        size = 2;
+                      };
+                    }
+                  ];
+                };
+              }
+              {
+                tab = {
+                  _children = [
+                    {
+                      pane = {
+                        cwd = "~/Repo/personal/dotfiles";
+                      };
+                    }
+                  ];
+                  _props = {
+                    focus = true;
+                    name = "dotfiles";
+                  };
+                };
+              }
+              {
+                tab = {
+                  _children = [
+                    {
+                      pane = {
+                        command = "zsh";
+                        args = [
+                          "-c"
+                          "LINES=40 COLUMNS=180 && watch -n 1 transmission-remote -t active -l -st"
+                        ];
+                      };
+                    }
+                  ];
+                  _props = {
+                    name = "torrents";
+                  };
+                };
+              }
+            ];
+          };
+        };
+      };
     };
     starship = {
       enable = true;
