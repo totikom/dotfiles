@@ -45,6 +45,7 @@
   # environment.
   home.packages = with pkgs; [
     digikam
+    rawtherapee
     rustmission
     transmission-remote-gtk
   ];
