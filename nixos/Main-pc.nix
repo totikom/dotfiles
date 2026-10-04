@@ -90,7 +90,7 @@
       };
     };
     apcupsd = {
-      enable = true;
+      enable = false;
       configText = ''
         UPSCABLE usb
         UPSTYPE usb
