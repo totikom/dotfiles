@@ -117,6 +117,14 @@
       jwtSecretKeyFile = config.sops.secrets."stash/jwtSecretKey".path;
       sessionStoreKeyFile = config.sops.secrets."stash/sessionStoreKey".path;
     };
+    navidrome = {
+      enable = false;
+      settings = {
+        LogLevel = "debug";
+        MusicFolder = "${config.users.users.eugene.home}/Music";
+      };
+      user = "eugene";
+    };
   };
   systemd.services = {
     transmission.serviceConfig = {
@@ -128,6 +136,7 @@
       ];
       TimeoutSec = "5m";
     };
+    navidrome.serviceConfig.ProtectHome = lib.mkForce "tmpfs";
     freeleech = {
       description = "Move torrent files to download dir during freeleech";
       script = ''
