@@ -68,6 +68,10 @@
       }
     ];
   };
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+  ];
 
   # List services that you want to enable:
   services = {
