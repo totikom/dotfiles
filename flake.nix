@@ -54,6 +54,7 @@
                 (_: _: {
                   mullvad = nixpkgs-unstable.legacyPackages.x86_64-linux.mullvad;
                   joplin-desktop = nixpkgs-unstable.legacyPackages.x86_64-linux.joplin-desktop;
+                  deltachat-desktop = nixpkgs-unstable.legacyPackages.x86_64-linux.deltachat-desktop;
                 })
               ];
             }
@@ -93,6 +94,7 @@
                 (_: _: {
                   mullvad = nixpkgs-unstable.legacyPackages.x86_64-linux.mullvad;
                   joplin-desktop = nixpkgs-unstable.legacyPackages.x86_64-linux.joplin-desktop;
+                  deltachat-desktop = nixpkgs-unstable.legacyPackages.x86_64-linux.deltachat-desktop;
                 })
               ];
             }
