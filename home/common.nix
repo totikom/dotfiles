@@ -59,9 +59,9 @@ in
       usbutils
       veracrypt
       wifi-qr
+      xbacklight
       xclip
       xdotool
-      xbacklight
       yubikey-manager
       yubioath-flutter
       zathura

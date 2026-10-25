@@ -99,7 +99,7 @@
         MINUTES 2
         TIMEOUT 0
         NISIP 127.0.0.1
-        '';
+      '';
     };
     stash = {
       enable = true;
