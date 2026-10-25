@@ -45,6 +45,7 @@ in
       maim
       mc
       ncdu
+      nextcloud-client
       nix-output-monitor
       nixfmt
       nmon
