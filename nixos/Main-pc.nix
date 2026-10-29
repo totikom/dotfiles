@@ -153,51 +153,27 @@
     };
   };
 
-  sops =
-    let
-      wifi_generator = name: value: {
-        format = "binary";
-        path = "/etc/NetworkManager/system-connections/${name}";
-        restartUnits = [ "NetworkManager.service" ];
-        sopsFile = ../wifis/${name};
-      };
-      generated_secrets = builtins.mapAttrs (wifi_generator) (builtins.readDir (../wifis));
-      hand_written_secrets = {
-        "syncthing/Main-pc/cert.pem" = {
-          format = "binary";
-          owner = config.users.users.eugene.name;
-          mode = "0600";
-          sopsFile = ../syncthing/Main-pc/cert.pem;
-        };
-        "syncthing/Main-pc/key.pem" = {
-          format = "binary";
-          owner = config.users.users.eugene.name;
-          mode = "0600";
-          sopsFile = ../syncthing/Main-pc/key.pem;
-        };
-        "yggdrasil_key" = {
-          format = "binary";
-          sopsFile = ../yggdrasil/Main-pc/key.pem;
-        };
-      };
-      secrets_from_default_file = {
-        "borg/Main-pc/home" = { };
-        "borg/Main-pc/pictures" = { };
-        "stash/jwtSecretKey" = { };
-        "stash/password" = { };
-        "stash/sessionStoreKey" = { };
-      };
-    in
-    {
-      # This will add secrets.yml to the nix store
-      # You can avoid this by adding a string to the full path instead, i.e.
-      # sops.defaultSopsFile = "/root/.sops/secrets/example.yaml";
-      defaultSopsFile = ./secrets.json;
-
-      # This will automatically import SSH keys as age keys
-      age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-
-      # This is the actual specification of the secrets.
-      secrets = hand_written_secrets // generated_secrets // secrets_from_default_file;
+  sops.secrets = {
+    "syncthing/Main-pc/cert.pem" = {
+      format = "binary";
+      owner = config.users.users.eugene.name;
+      mode = "0600";
+      sopsFile = ../syncthing/Main-pc/cert.pem;
     };
+    "syncthing/Main-pc/key.pem" = {
+      format = "binary";
+      owner = config.users.users.eugene.name;
+      mode = "0600";
+      sopsFile = ../syncthing/Main-pc/key.pem;
+    };
+    "yggdrasil_key" = {
+      format = "binary";
+      sopsFile = ../yggdrasil/Main-pc/key.pem;
+    };
+    "borg/Main-pc/home" = { };
+    "borg/Main-pc/pictures" = { };
+    "stash/jwtSecretKey" = { };
+    "stash/password" = { };
+    "stash/sessionStoreKey" = { };
+  };
 }

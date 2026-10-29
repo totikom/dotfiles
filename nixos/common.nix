@@ -283,6 +283,26 @@
     ];
   };
 
+  sops =
+    let
+      wifi_secrets = builtins.mapAttrs (name: _: {
+        format = "binary";
+        path = "/etc/NetworkManager/system-connections/${name}";
+        restartUnits = [ "NetworkManager.service" ];
+        sopsFile = ../wifis/${name};
+      }) (builtins.readDir ../wifis);
+    in
+    {
+      defaultSopsFile = ./secrets.json;
+
+      # This will automatically import SSH keys as age keys
+      age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+
+      # Common secrets
+      # Each machine will merge its own secrets with them
+      secrets = wifi_secrets;
+    };
+
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings = {
     experimental-features = [
