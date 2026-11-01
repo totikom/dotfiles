@@ -67,17 +67,14 @@
       mkHost =
         {
           hostName,
-          diskoConfig,
-          hardwareConfig,
-          hostConfig,
           homeImports,
         }:
         nixpkgs.lib.nixosSystem {
           modules = commonModules ++ [
-            diskoConfig
-            hardwareConfig
+            ./disko/${hostName}.nix
+            ./hardware/${hostName}.nix
+            ./nixos/${hostName}.nix
             ./nixos/common.nix
-            hostConfig
             {
               networking.hostName = hostName;
               home-manager = {
@@ -94,18 +91,12 @@
       nixosConfigurations = {
         ThinkPadT490s = mkHost {
           hostName = "ThinkPadT490s";
-          diskoConfig = ./disko/ThinkPadT490s.nix;
-          hardwareConfig = ./hardware/ThinkPadT490s.nix;
-          hostConfig = ./nixos/ThinkPadT490s.nix;
           homeImports = [
             ./home/common.nix
           ];
         };
         Main-pc = mkHost {
           hostName = "Main-pc";
-          diskoConfig = ./disko/Main-pc.nix;
-          hardwareConfig = ./hardware/Main-pc.nix;
-          hostConfig = ./nixos/Main-pc.nix;
           homeImports = [
             ./home/common.nix
             ./home/Main-pc.nix
