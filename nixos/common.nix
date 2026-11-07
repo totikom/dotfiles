@@ -203,10 +203,10 @@
           };
         };
         folders = {
-          "tab.digital" = {
-            label = "tab.digital";
+          "Syncthing" = {
+            label = "Syncthing";
             id = "ego4c-ckkzv";
-            path = "~/Documents/tab.digital";
+            path = "~/Syncthing";
             devices = [
               "Main-pc"
               "Redmi K80 Pro"
